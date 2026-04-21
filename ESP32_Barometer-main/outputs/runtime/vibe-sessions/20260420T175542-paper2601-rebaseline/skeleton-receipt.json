@@ -1,0 +1,8 @@
+{
+  "stage": "skeleton_check",
+  "result": "pass",
+  "checked": [
+    "local paper exists: /home/leo/floor_estimate/2601.02184v1.pdf",
+    "current node implementation deviated from paper main method before rebaseline"
+  ]
+}

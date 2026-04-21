@@ -1,0 +1,9 @@
+{
+  "stage": "skeleton_check",
+  "result": "pass",
+  "checked": [
+    "Local project docs/plans and docs/requirements are present",
+    "Upstream repositories verified: witsir/ESP32_Barometer and witsir/ros_barometer",
+    "Gap confirmed: official repos publish streams but do not implement floor indexing argmin over H_k"
+  ]
+}

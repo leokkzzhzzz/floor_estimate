@@ -1,0 +1,19 @@
+[0.594s] Invoking command in '/home/leo/floor_estimate/ros_barometer-main/build/serial_to_ros2': AMENT_PREFIX_PATH=/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces LD_LIBRARY_PATH=/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/leo/floor_estimate/ros_barometer-main/build/serial_to_ros2/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/leo/floor_estimate/ros_barometer-main/install/serial_to_ros2/lib/python3.10/site-packages:/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/leo/floor_estimate/ros_barometer-main/build/serial_to_ros2/build --no-deps symlink_data
+[0.826s] running develop
+[0.889s] /usr/lib/python3/dist-packages/pkg_resources/__init__.py:116: PkgResourcesDeprecationWarning: 1.12.1-git20200711.33e2d80-dfsg1-0.6 is an invalid version and will not be supported in a future release
+[0.889s]   warnings.warn(
+[1.009s] running egg_info
+[1.009s] writing serial_to_ros2.egg-info/PKG-INFO
+[1.009s] writing dependency_links to serial_to_ros2.egg-info/dependency_links.txt
+[1.009s] writing entry points to serial_to_ros2.egg-info/entry_points.txt
+[1.009s] writing requirements to serial_to_ros2.egg-info/requires.txt
+[1.009s] writing top-level names to serial_to_ros2.egg-info/top_level.txt
+[1.011s] reading manifest file 'serial_to_ros2.egg-info/SOURCES.txt'
+[1.011s] writing manifest file 'serial_to_ros2.egg-info/SOURCES.txt'
+[1.035s] running build_ext
+[1.035s] Creating /home/leo/floor_estimate/ros_barometer-main/install/serial_to_ros2/lib/python3.10/site-packages/serial-to-ros2.egg-link (link to .)
+[1.036s] Installing esp32_serial_baro script to /home/leo/floor_estimate/ros_barometer-main/install/serial_to_ros2/lib/serial_to_ros2
+[1.036s] 
+[1.036s] Installed /home/leo/floor_estimate/ros_barometer-main/build/serial_to_ros2
+[1.036s] running symlink_data
+[1.066s] Invoked command in '/home/leo/floor_estimate/ros_barometer-main/build/serial_to_ros2' returned '0': AMENT_PREFIX_PATH=/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces LD_LIBRARY_PATH=/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/leo/floor_estimate/ros_barometer-main/build/serial_to_ros2/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/leo/floor_estimate/ros_barometer-main/install/serial_to_ros2/lib/python3.10/site-packages:/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/leo/floor_estimate/ros_barometer-main/build/serial_to_ros2/build --no-deps symlink_data

@@ -1,0 +1,28 @@
+running develop
+/usr/lib/python3/dist-packages/pkg_resources/__init__.py:116: PkgResourcesDeprecationWarning: 1.12.1-git20200711.33e2d80-dfsg1-0.6 is an invalid version and will not be supported in a future release
+  warnings.warn(
+running egg_info
+creating serial_to_ros2.egg-info
+writing serial_to_ros2.egg-info/PKG-INFO
+writing dependency_links to serial_to_ros2.egg-info/dependency_links.txt
+writing entry points to serial_to_ros2.egg-info/entry_points.txt
+writing requirements to serial_to_ros2.egg-info/requires.txt
+writing top-level names to serial_to_ros2.egg-info/top_level.txt
+writing manifest file 'serial_to_ros2.egg-info/SOURCES.txt'
+reading manifest file 'serial_to_ros2.egg-info/SOURCES.txt'
+writing manifest file 'serial_to_ros2.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/leo/floor_estimate/ros_barometer-main/install/serial_to_ros2/lib/python3.10/site-packages/serial-to-ros2.egg-link (link to .)
+Installing esp32_serial_baro script to /home/leo/floor_estimate/ros_barometer-main/install/serial_to_ros2/lib/serial_to_ros2
+
+Installed /home/leo/floor_estimate/ros_barometer-main/build/serial_to_ros2
+running symlink_data
+creating /home/leo/floor_estimate/ros_barometer-main/install/serial_to_ros2/share/ament_index
+creating /home/leo/floor_estimate/ros_barometer-main/install/serial_to_ros2/share/ament_index/resource_index
+creating /home/leo/floor_estimate/ros_barometer-main/install/serial_to_ros2/share/ament_index/resource_index/packages
+symbolically linking /home/leo/floor_estimate/ros_barometer-main/build/serial_to_ros2/resource/serial_to_ros2 -> /home/leo/floor_estimate/ros_barometer-main/install/serial_to_ros2/share/ament_index/resource_index/packages
+symbolically linking /home/leo/floor_estimate/ros_barometer-main/build/serial_to_ros2/package.xml -> /home/leo/floor_estimate/ros_barometer-main/install/serial_to_ros2/share/serial_to_ros2
+creating /home/leo/floor_estimate/ros_barometer-main/install/serial_to_ros2/share/serial_to_ros2/config
+symbolically linking /home/leo/floor_estimate/ros_barometer-main/build/serial_to_ros2/config/esp32_serial_baro.yaml -> /home/leo/floor_estimate/ros_barometer-main/install/serial_to_ros2/share/serial_to_ros2/config
+creating /home/leo/floor_estimate/ros_barometer-main/install/serial_to_ros2/share/serial_to_ros2/launch
+symbolically linking /home/leo/floor_estimate/ros_barometer-main/build/serial_to_ros2/launch/baro_p_alti_launch.py -> /home/leo/floor_estimate/ros_barometer-main/install/serial_to_ros2/share/serial_to_ros2/launch

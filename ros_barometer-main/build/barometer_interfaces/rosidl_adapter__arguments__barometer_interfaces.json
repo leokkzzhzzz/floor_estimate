@@ -1,0 +1,7 @@
+{
+  "package_name": "barometer_interfaces",
+  "non_idl_tuples": [
+    "/home/leo/floor_estimate/ros_barometer-main/barometer_interfaces:msg/Barometer.msg",
+    "/home/leo/floor_estimate/ros_barometer-main/barometer_interfaces:msg/ZMotion.msg"
+  ]
+}

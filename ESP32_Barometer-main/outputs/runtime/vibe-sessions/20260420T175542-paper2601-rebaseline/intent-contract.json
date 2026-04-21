@@ -1,0 +1,12 @@
+{
+  "goal": "Rebaseline implementation against the correct paper arXiv:2601.02184v1.",
+  "deliverable": [
+    "Paper-aligned method spec",
+    "Node firmware switched to differential barometric method",
+    "Build verification"
+  ],
+  "acceptance_criteria": [
+    "Node code follows Eq.(1),(3),(10),(13)",
+    "barometer_node_s3 compiles"
+  ]
+}

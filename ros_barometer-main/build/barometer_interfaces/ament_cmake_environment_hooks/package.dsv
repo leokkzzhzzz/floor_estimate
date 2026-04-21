@@ -1,0 +1,4 @@
+source;share/barometer_interfaces/local_setup.bash
+source;share/barometer_interfaces/local_setup.dsv
+source;share/barometer_interfaces/local_setup.sh
+source;share/barometer_interfaces/local_setup.zsh

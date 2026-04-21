@@ -1,0 +1,25 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from barometer_interfaces/msg/Barometer.msg
+// generated code does not contain a copyright notice
+
+#include "std_msgs/msg/Header.idl"
+
+module barometer_interfaces {
+  module msg {
+    struct Barometer {
+      std_msgs::msg::Header header;
+
+      @verbatim (language="comment", text=
+        "m")
+      float altitude;
+
+      @verbatim (language="comment", text=
+        "Pascals")
+      float pressure;
+
+      @verbatim (language="comment", text=
+        "°C")
+      float temperature;
+    };
+  };
+};

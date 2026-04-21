@@ -1,0 +1,17 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/barometer_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/barometer_interfaces/msg/detail/barometer__type_support.c.o"
+  "CMakeFiles/barometer_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/barometer_interfaces/msg/detail/barometer__type_support.c.o.d"
+  "CMakeFiles/barometer_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/barometer_interfaces/msg/detail/z_motion__type_support.c.o"
+  "CMakeFiles/barometer_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/barometer_interfaces/msg/detail/z_motion__type_support.c.o.d"
+  "libbarometer_interfaces__rosidl_typesupport_introspection_c.pdb"
+  "libbarometer_interfaces__rosidl_typesupport_introspection_c.so"
+  "rosidl_typesupport_introspection_c/barometer_interfaces/msg/detail/barometer__rosidl_typesupport_introspection_c.h"
+  "rosidl_typesupport_introspection_c/barometer_interfaces/msg/detail/barometer__type_support.c"
+  "rosidl_typesupport_introspection_c/barometer_interfaces/msg/detail/z_motion__rosidl_typesupport_introspection_c.h"
+  "rosidl_typesupport_introspection_c/barometer_interfaces/msg/detail/z_motion__type_support.c"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang C)
+  include(CMakeFiles/barometer_interfaces__rosidl_typesupport_introspection_c.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

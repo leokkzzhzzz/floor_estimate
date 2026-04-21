@@ -1,0 +1,29 @@
+{
+  "stage": "deep_interview",
+  "goal": "Implement a complete, simple, and testable node-side floor estimation pipeline using EKF + floor state machine + offline MAP/IEKF-style replay tuning support.",
+  "deliverable": [
+    "Firmware node_s3 with WiFi, /data ingest, base registration, /status output, EKF state x=[h,v,b], and floor FSM",
+    "Offline replay/tuning script for MAP/IEKF-style iterative fitting",
+    "Runnable local verification commands and results"
+  ],
+  "constraints": [
+    "Keep code simple with focused comments",
+    "Annotate paper-method usages inside code",
+    "Do not break existing base firmware path"
+  ],
+  "acceptance_criteria": [
+    "platformio build succeeds for barometer_node_s3",
+    "status endpoint payload contains estimator and floor outputs",
+    "replay script self-test passes with synthetic trajectory"
+  ],
+  "manual_spot_checks": [
+    "node boot logs show WiFi and registration to base /clientip",
+    "base logs continue to show POST 200 success",
+    "node logs show estimator update traces"
+  ],
+  "non_goals": [
+    "Cloud backend integration",
+    "Multi-sensor fusion beyond barometer"
+  ],
+  "autonomy_mode": "implementation_first"
+}

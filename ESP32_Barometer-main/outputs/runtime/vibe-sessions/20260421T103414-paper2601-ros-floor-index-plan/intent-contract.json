@@ -1,0 +1,18 @@
+{
+  "goal": "Provide a feasible, on-site executable plan for paper 2601.02184 floor estimation pipeline with ROS-side differential and floor indexing.",
+  "deliverable": [
+    "Frozen requirement document",
+    "Bounded execution plan ending at xl_plan",
+    "Immediate on-site commands for dual-sensor alignment and validation"
+  ],
+  "constraints": [
+    "Do not execute implementation in this run",
+    "Keep EKF out of current mainline",
+    "Preserve current ESP32 transport chain"
+  ],
+  "acceptance_criteria": [
+    "Plan includes Eq.(1)(3)(8)(9)(10)(13) mapping",
+    "Plan includes field calibration and verification commands",
+    "Plan specifies periodic recalibration policy"
+  ]
+}

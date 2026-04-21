@@ -1,0 +1,17 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/barometer_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/barometer_interfaces/msg/detail/dds_fastrtps/barometer__type_support.cpp.o"
+  "CMakeFiles/barometer_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/barometer_interfaces/msg/detail/dds_fastrtps/barometer__type_support.cpp.o.d"
+  "CMakeFiles/barometer_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/barometer_interfaces/msg/detail/dds_fastrtps/z_motion__type_support.cpp.o"
+  "CMakeFiles/barometer_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/barometer_interfaces/msg/detail/dds_fastrtps/z_motion__type_support.cpp.o.d"
+  "libbarometer_interfaces__rosidl_typesupport_fastrtps_cpp.pdb"
+  "libbarometer_interfaces__rosidl_typesupport_fastrtps_cpp.so"
+  "rosidl_typesupport_fastrtps_cpp/barometer_interfaces/msg/detail/barometer__rosidl_typesupport_fastrtps_cpp.hpp"
+  "rosidl_typesupport_fastrtps_cpp/barometer_interfaces/msg/detail/dds_fastrtps/barometer__type_support.cpp"
+  "rosidl_typesupport_fastrtps_cpp/barometer_interfaces/msg/detail/dds_fastrtps/z_motion__type_support.cpp"
+  "rosidl_typesupport_fastrtps_cpp/barometer_interfaces/msg/detail/z_motion__rosidl_typesupport_fastrtps_cpp.hpp"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/barometer_interfaces__rosidl_typesupport_fastrtps_cpp.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

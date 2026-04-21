@@ -1,0 +1,188 @@
+[0.079s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--symlink-install']
+[0.079s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=16, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x740952783d30>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7409528c8c10>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7409528c8c10>>, mixin_verb=('build',))
+[0.250s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.250s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.250s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.250s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.250s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.250s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.250s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/leo/floor_estimate/ros_barometer-main'
+[0.250s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.250s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.251s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.251s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.251s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.251s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.251s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.251s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.251s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.258s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.258s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.258s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.258s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.259s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.259s] Level 1:colcon.colcon_core.package_identification:_identify(barometer_interfaces) by extensions ['ignore', 'ignore_ament_install']
+[0.259s] Level 1:colcon.colcon_core.package_identification:_identify(barometer_interfaces) by extension 'ignore'
+[0.259s] Level 1:colcon.colcon_core.package_identification:_identify(barometer_interfaces) by extension 'ignore_ament_install'
+[0.259s] Level 1:colcon.colcon_core.package_identification:_identify(barometer_interfaces) by extensions ['colcon_pkg']
+[0.259s] Level 1:colcon.colcon_core.package_identification:_identify(barometer_interfaces) by extension 'colcon_pkg'
+[0.259s] Level 1:colcon.colcon_core.package_identification:_identify(barometer_interfaces) by extensions ['colcon_meta']
+[0.259s] Level 1:colcon.colcon_core.package_identification:_identify(barometer_interfaces) by extension 'colcon_meta'
+[0.259s] Level 1:colcon.colcon_core.package_identification:_identify(barometer_interfaces) by extensions ['ros']
+[0.259s] Level 1:colcon.colcon_core.package_identification:_identify(barometer_interfaces) by extension 'ros'
+[0.261s] DEBUG:colcon.colcon_core.package_identification:Package 'barometer_interfaces' with type 'ros.ament_cmake' and name 'barometer_interfaces'
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(serial_to_ros2) by extensions ['ignore', 'ignore_ament_install']
+[0.262s] Level 1:colcon.colcon_core.package_identification:_identify(serial_to_ros2) by extension 'ignore'
+[0.262s] Level 1:colcon.colcon_core.package_identification:_identify(serial_to_ros2) by extension 'ignore_ament_install'
+[0.262s] Level 1:colcon.colcon_core.package_identification:_identify(serial_to_ros2) by extensions ['colcon_pkg']
+[0.262s] Level 1:colcon.colcon_core.package_identification:_identify(serial_to_ros2) by extension 'colcon_pkg'
+[0.262s] Level 1:colcon.colcon_core.package_identification:_identify(serial_to_ros2) by extensions ['colcon_meta']
+[0.262s] Level 1:colcon.colcon_core.package_identification:_identify(serial_to_ros2) by extension 'colcon_meta'
+[0.262s] Level 1:colcon.colcon_core.package_identification:_identify(serial_to_ros2) by extensions ['ros']
+[0.262s] Level 1:colcon.colcon_core.package_identification:_identify(serial_to_ros2) by extension 'ros'
+[0.262s] DEBUG:colcon.colcon_core.package_identification:Package 'serial_to_ros2' with type 'ros.ament_python' and name 'serial_to_ros2'
+[0.262s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.262s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.262s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.262s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.262s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.275s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.275s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.277s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 367 installed packages in /opt/ros/humble
+[0.279s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.308s] Level 5:colcon.colcon_core.verb:set package 'barometer_interfaces' build argument 'cmake_args' from command line to 'None'
+[0.308s] Level 5:colcon.colcon_core.verb:set package 'barometer_interfaces' build argument 'cmake_target' from command line to 'None'
+[0.308s] Level 5:colcon.colcon_core.verb:set package 'barometer_interfaces' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.308s] Level 5:colcon.colcon_core.verb:set package 'barometer_interfaces' build argument 'cmake_clean_cache' from command line to 'False'
+[0.308s] Level 5:colcon.colcon_core.verb:set package 'barometer_interfaces' build argument 'cmake_clean_first' from command line to 'False'
+[0.308s] Level 5:colcon.colcon_core.verb:set package 'barometer_interfaces' build argument 'cmake_force_configure' from command line to 'False'
+[0.308s] Level 5:colcon.colcon_core.verb:set package 'barometer_interfaces' build argument 'ament_cmake_args' from command line to 'None'
+[0.308s] Level 5:colcon.colcon_core.verb:set package 'barometer_interfaces' build argument 'catkin_cmake_args' from command line to 'None'
+[0.308s] Level 5:colcon.colcon_core.verb:set package 'barometer_interfaces' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.309s] DEBUG:colcon.colcon_core.verb:Building package 'barometer_interfaces' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/leo/floor_estimate/ros_barometer-main/build/barometer_interfaces', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces', 'merge_install': False, 'path': '/home/leo/floor_estimate/ros_barometer-main/barometer_interfaces', 'symlink_install': True, 'test_result_base': None}
+[0.309s] Level 5:colcon.colcon_core.verb:set package 'serial_to_ros2' build argument 'cmake_args' from command line to 'None'
+[0.309s] Level 5:colcon.colcon_core.verb:set package 'serial_to_ros2' build argument 'cmake_target' from command line to 'None'
+[0.309s] Level 5:colcon.colcon_core.verb:set package 'serial_to_ros2' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.309s] Level 5:colcon.colcon_core.verb:set package 'serial_to_ros2' build argument 'cmake_clean_cache' from command line to 'False'
+[0.309s] Level 5:colcon.colcon_core.verb:set package 'serial_to_ros2' build argument 'cmake_clean_first' from command line to 'False'
+[0.309s] Level 5:colcon.colcon_core.verb:set package 'serial_to_ros2' build argument 'cmake_force_configure' from command line to 'False'
+[0.309s] Level 5:colcon.colcon_core.verb:set package 'serial_to_ros2' build argument 'ament_cmake_args' from command line to 'None'
+[0.309s] Level 5:colcon.colcon_core.verb:set package 'serial_to_ros2' build argument 'catkin_cmake_args' from command line to 'None'
+[0.309s] Level 5:colcon.colcon_core.verb:set package 'serial_to_ros2' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.309s] DEBUG:colcon.colcon_core.verb:Building package 'serial_to_ros2' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/leo/floor_estimate/ros_barometer-main/build/serial_to_ros2', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/leo/floor_estimate/ros_barometer-main/install/serial_to_ros2', 'merge_install': False, 'path': '/home/leo/floor_estimate/ros_barometer-main/serial_to_ros2', 'symlink_install': True, 'test_result_base': None}
+[0.309s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.310s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.310s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/leo/floor_estimate/ros_barometer-main/barometer_interfaces' with build type 'ament_cmake'
+[0.310s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/leo/floor_estimate/ros_barometer-main/barometer_interfaces'
+[0.311s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.312s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.312s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.319s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/leo/floor_estimate/ros_barometer-main/build/barometer_interfaces': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/leo/floor_estimate/ros_barometer-main/build/barometer_interfaces -- -j16 -l16
+[0.636s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/leo/floor_estimate/ros_barometer-main/build/barometer_interfaces' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/leo/floor_estimate/ros_barometer-main/build/barometer_interfaces -- -j16 -l16
+[0.646s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/leo/floor_estimate/ros_barometer-main/build/barometer_interfaces': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/leo/floor_estimate/ros_barometer-main/build/barometer_interfaces
+[0.704s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(barometer_interfaces)
+[0.705s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/leo/floor_estimate/ros_barometer-main/build/barometer_interfaces' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/leo/floor_estimate/ros_barometer-main/build/barometer_interfaces
+[0.706s] Level 1:colcon.colcon_core.environment:checking '/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces' for CMake module files
+[0.707s] Level 1:colcon.colcon_core.environment:checking '/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces' for CMake config files
+[0.707s] Level 1:colcon.colcon_core.shell:create_environment_hook('barometer_interfaces', 'cmake_prefix_path')
+[0.707s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/hook/cmake_prefix_path.ps1'
+[0.708s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/hook/cmake_prefix_path.dsv'
+[0.708s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/hook/cmake_prefix_path.sh'
+[0.709s] Level 1:colcon.colcon_core.environment:checking '/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/lib'
+[0.709s] Level 1:colcon.colcon_core.shell:create_environment_hook('barometer_interfaces', 'ld_library_path_lib')
+[0.709s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/hook/ld_library_path_lib.ps1'
+[0.709s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/hook/ld_library_path_lib.dsv'
+[0.710s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/hook/ld_library_path_lib.sh'
+[0.710s] Level 1:colcon.colcon_core.environment:checking '/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/bin'
+[0.710s] Level 1:colcon.colcon_core.environment:checking '/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/lib/pkgconfig/barometer_interfaces.pc'
+[0.710s] Level 1:colcon.colcon_core.environment:checking '/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/lib/python3.10/site-packages'
+[0.710s] Level 1:colcon.colcon_core.environment:checking '/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/bin'
+[0.710s] INFO:colcon.colcon_core.shell:Creating package script '/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/package.ps1'
+[0.711s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/package.dsv'
+[0.712s] INFO:colcon.colcon_core.shell:Creating package script '/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/package.sh'
+[0.713s] INFO:colcon.colcon_core.shell:Creating package script '/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/package.bash'
+[0.713s] INFO:colcon.colcon_core.shell:Creating package script '/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/package.zsh'
+[0.713s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/colcon-core/packages/barometer_interfaces)
+[0.714s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(barometer_interfaces)
+[0.714s] Level 1:colcon.colcon_core.environment:checking '/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces' for CMake module files
+[0.714s] Level 1:colcon.colcon_core.environment:checking '/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces' for CMake config files
+[0.715s] Level 1:colcon.colcon_core.shell:create_environment_hook('barometer_interfaces', 'cmake_prefix_path')
+[0.715s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/hook/cmake_prefix_path.ps1'
+[0.715s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/hook/cmake_prefix_path.dsv'
+[0.716s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/hook/cmake_prefix_path.sh'
+[0.716s] Level 1:colcon.colcon_core.environment:checking '/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/lib'
+[0.716s] Level 1:colcon.colcon_core.shell:create_environment_hook('barometer_interfaces', 'ld_library_path_lib')
+[0.716s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/hook/ld_library_path_lib.ps1'
+[0.716s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/hook/ld_library_path_lib.dsv'
+[0.717s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/hook/ld_library_path_lib.sh'
+[0.717s] Level 1:colcon.colcon_core.environment:checking '/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/bin'
+[0.717s] Level 1:colcon.colcon_core.environment:checking '/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/lib/pkgconfig/barometer_interfaces.pc'
+[0.717s] Level 1:colcon.colcon_core.environment:checking '/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/lib/python3.10/site-packages'
+[0.717s] Level 1:colcon.colcon_core.environment:checking '/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/bin'
+[0.717s] INFO:colcon.colcon_core.shell:Creating package script '/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/package.ps1'
+[0.718s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/package.dsv'
+[0.718s] INFO:colcon.colcon_core.shell:Creating package script '/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/package.sh'
+[0.718s] INFO:colcon.colcon_core.shell:Creating package script '/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/package.bash'
+[0.719s] INFO:colcon.colcon_core.shell:Creating package script '/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/package.zsh'
+[0.719s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/colcon-core/packages/barometer_interfaces)
+[0.719s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/leo/floor_estimate/ros_barometer-main/serial_to_ros2' with build type 'ament_python'
+[0.719s] Level 1:colcon.colcon_core.shell:create_environment_hook('serial_to_ros2', 'ament_prefix_path')
+[0.719s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/leo/floor_estimate/ros_barometer-main/install/serial_to_ros2/share/serial_to_ros2/hook/ament_prefix_path.ps1'
+[0.720s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/leo/floor_estimate/ros_barometer-main/install/serial_to_ros2/share/serial_to_ros2/hook/ament_prefix_path.dsv'
+[0.720s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/leo/floor_estimate/ros_barometer-main/install/serial_to_ros2/share/serial_to_ros2/hook/ament_prefix_path.sh'
+[0.720s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.720s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.963s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/leo/floor_estimate/ros_barometer-main/serial_to_ros2'
+[0.963s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.963s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.314s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/leo/floor_estimate/ros_barometer-main/build/serial_to_ros2': AMENT_PREFIX_PATH=/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces LD_LIBRARY_PATH=/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/leo/floor_estimate/ros_barometer-main/build/serial_to_ros2/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/leo/floor_estimate/ros_barometer-main/install/serial_to_ros2/lib/python3.10/site-packages:/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/leo/floor_estimate/ros_barometer-main/build/serial_to_ros2/build --no-deps symlink_data
+[1.786s] Level 1:colcon.colcon_core.shell:create_environment_hook('serial_to_ros2', 'pythonpath_develop')
+[1.786s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/leo/floor_estimate/ros_barometer-main/build/serial_to_ros2' returned '0': AMENT_PREFIX_PATH=/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces LD_LIBRARY_PATH=/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/leo/floor_estimate/ros_barometer-main/build/serial_to_ros2/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/leo/floor_estimate/ros_barometer-main/install/serial_to_ros2/lib/python3.10/site-packages:/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/leo/floor_estimate/ros_barometer-main/build/serial_to_ros2/build --no-deps symlink_data
+[1.787s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/leo/floor_estimate/ros_barometer-main/build/serial_to_ros2/share/serial_to_ros2/hook/pythonpath_develop.ps1'
+[1.787s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/leo/floor_estimate/ros_barometer-main/build/serial_to_ros2/share/serial_to_ros2/hook/pythonpath_develop.dsv'
+[1.788s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/leo/floor_estimate/ros_barometer-main/build/serial_to_ros2/share/serial_to_ros2/hook/pythonpath_develop.sh'
+[1.788s] Level 1:colcon.colcon_core.environment:checking '/home/leo/floor_estimate/ros_barometer-main/install/serial_to_ros2' for CMake module files
+[1.789s] Level 1:colcon.colcon_core.environment:checking '/home/leo/floor_estimate/ros_barometer-main/install/serial_to_ros2' for CMake config files
+[1.789s] Level 1:colcon.colcon_core.environment:checking '/home/leo/floor_estimate/ros_barometer-main/install/serial_to_ros2/lib'
+[1.789s] Level 1:colcon.colcon_core.environment:checking '/home/leo/floor_estimate/ros_barometer-main/install/serial_to_ros2/bin'
+[1.789s] Level 1:colcon.colcon_core.environment:checking '/home/leo/floor_estimate/ros_barometer-main/install/serial_to_ros2/lib/pkgconfig/serial_to_ros2.pc'
+[1.789s] Level 1:colcon.colcon_core.environment:checking '/home/leo/floor_estimate/ros_barometer-main/install/serial_to_ros2/lib/python3.10/site-packages'
+[1.790s] Level 1:colcon.colcon_core.shell:create_environment_hook('serial_to_ros2', 'pythonpath')
+[1.790s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/leo/floor_estimate/ros_barometer-main/install/serial_to_ros2/share/serial_to_ros2/hook/pythonpath.ps1'
+[1.790s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/leo/floor_estimate/ros_barometer-main/install/serial_to_ros2/share/serial_to_ros2/hook/pythonpath.dsv'
+[1.790s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/leo/floor_estimate/ros_barometer-main/install/serial_to_ros2/share/serial_to_ros2/hook/pythonpath.sh'
+[1.790s] Level 1:colcon.colcon_core.environment:checking '/home/leo/floor_estimate/ros_barometer-main/install/serial_to_ros2/bin'
+[1.791s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(serial_to_ros2)
+[1.791s] INFO:colcon.colcon_core.shell:Creating package script '/home/leo/floor_estimate/ros_barometer-main/install/serial_to_ros2/share/serial_to_ros2/package.ps1'
+[1.791s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/leo/floor_estimate/ros_barometer-main/install/serial_to_ros2/share/serial_to_ros2/package.dsv'
+[1.791s] INFO:colcon.colcon_core.shell:Creating package script '/home/leo/floor_estimate/ros_barometer-main/install/serial_to_ros2/share/serial_to_ros2/package.sh'
+[1.792s] INFO:colcon.colcon_core.shell:Creating package script '/home/leo/floor_estimate/ros_barometer-main/install/serial_to_ros2/share/serial_to_ros2/package.bash'
+[1.792s] INFO:colcon.colcon_core.shell:Creating package script '/home/leo/floor_estimate/ros_barometer-main/install/serial_to_ros2/share/serial_to_ros2/package.zsh'
+[1.792s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/leo/floor_estimate/ros_barometer-main/install/serial_to_ros2/share/colcon-core/packages/serial_to_ros2)
+[1.792s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[1.792s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[1.792s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[1.792s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[1.797s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[1.797s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[1.797s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[1.807s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[1.807s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/leo/floor_estimate/ros_barometer-main/install/local_setup.ps1'
+[1.808s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/leo/floor_estimate/ros_barometer-main/install/_local_setup_util_ps1.py'
+[1.809s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/leo/floor_estimate/ros_barometer-main/install/setup.ps1'
+[1.810s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/leo/floor_estimate/ros_barometer-main/install/local_setup.sh'
+[1.810s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/leo/floor_estimate/ros_barometer-main/install/_local_setup_util_sh.py'
+[1.810s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/leo/floor_estimate/ros_barometer-main/install/setup.sh'
+[1.811s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/leo/floor_estimate/ros_barometer-main/install/local_setup.bash'
+[1.812s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/leo/floor_estimate/ros_barometer-main/install/setup.bash'
+[1.812s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/leo/floor_estimate/ros_barometer-main/install/local_setup.zsh'
+[1.813s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/leo/floor_estimate/ros_barometer-main/install/setup.zsh'

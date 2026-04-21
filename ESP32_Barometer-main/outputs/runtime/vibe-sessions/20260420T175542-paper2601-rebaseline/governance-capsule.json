@@ -1,0 +1,7 @@
+{
+  "runtime": "vibe",
+  "runtime_mode": "interactive_governed",
+  "lane": "root_governed",
+  "started_at": "2026-04-20",
+  "topic": "paper2601-02184v1-method-rebaseline"
+}

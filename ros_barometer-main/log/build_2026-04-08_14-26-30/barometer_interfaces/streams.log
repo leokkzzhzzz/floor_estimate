@@ -1,0 +1,228 @@
+[0.010s] Invoking command in '/home/leo/floor_estimate/ros_barometer-main/build/barometer_interfaces': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/leo/floor_estimate/ros_barometer-main/barometer_interfaces -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces
+[0.141s] -- The C compiler identification is GNU 9.5.0
+[0.227s] -- The CXX compiler identification is GNU 11.4.0
+[0.236s] -- Detecting C compiler ABI info
+[0.304s] -- Detecting C compiler ABI info - done
+[0.309s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.310s] -- Detecting C compile features
+[0.310s] -- Detecting C compile features - done
+[0.313s] -- Detecting CXX compiler ABI info
+[0.382s] -- Detecting CXX compiler ABI info - done
+[0.387s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.387s] -- Detecting CXX compile features
+[0.388s] -- Detecting CXX compile features - done
+[0.393s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.514s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.565s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.595s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[0.599s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.606s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.648s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.681s] -- Found std_msgs: 4.9.0 (/opt/ros/humble/share/std_msgs/cmake)
+[0.906s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[1.074s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.295s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.313s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+[1.314s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[1.339s] -- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+[1.339s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[1.339s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[1.339s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+[1.355s] -- Found PythonExtra: .so  
+[1.394s] -- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.415s] -- Added test 'lint_cmake' to check CMake code style
+[1.416s] -- Added test 'xmllint' to check XML markup files
+[1.419s] -- Configuring done
+[1.445s] -- Generating done
+[1.453s] -- Build files have been written to: /home/leo/floor_estimate/ros_barometer-main/build/barometer_interfaces
+[1.459s] Invoked command in '/home/leo/floor_estimate/ros_barometer-main/build/barometer_interfaces' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/leo/floor_estimate/ros_barometer-main/barometer_interfaces -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces
+[1.460s] Invoking command in '/home/leo/floor_estimate/ros_barometer-main/build/barometer_interfaces': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/leo/floor_estimate/ros_barometer-main/build/barometer_interfaces -- -j16 -l16
+[1.497s] [  2%] Generating C code for ROS interfaces
+[1.504s] [  5%] Generating C++ code for ROS interfaces
+[1.512s] [  5%] Built target ament_cmake_python_symlink_barometer_interfaces
+[1.733s] [  5%] Built target barometer_interfaces__cpp
+[1.738s] running egg_info
+[1.739s] creating barometer_interfaces.egg-info
+[1.739s] writing barometer_interfaces.egg-info/PKG-INFO
+[1.739s] writing dependency_links to barometer_interfaces.egg-info/dependency_links.txt
+[1.740s] writing top-level names to barometer_interfaces.egg-info/top_level.txt
+[1.740s] writing manifest file 'barometer_interfaces.egg-info/SOURCES.txt'
+[1.741s] [  7%] Generating C++ type support dispatch for ROS interfaces
+[1.741s] [ 10%] Generating C++ type support for eProsima Fast-RTPS
+[1.742s] reading manifest file 'barometer_interfaces.egg-info/SOURCES.txt'
+[1.742s] writing manifest file 'barometer_interfaces.egg-info/SOURCES.txt'
+[1.743s] [ 12%] Generating C++ introspection for ROS interfaces
+[1.751s] [ 17%] Building C object CMakeFiles/barometer_interfaces__rosidl_generator_c.dir/rosidl_generator_c/barometer_interfaces/msg/detail/barometer__functions.c.o
+[1.752s] [ 17%] Building C object CMakeFiles/barometer_interfaces__rosidl_generator_c.dir/rosidl_generator_c/barometer_interfaces/msg/detail/z_motion__functions.c.o
+[1.771s] [ 17%] Built target ament_cmake_python_build_barometer_interfaces_egg
+[1.812s] [ 20%] Linking C shared library libbarometer_interfaces__rosidl_generator_c.so
+[1.846s] [ 20%] Built target barometer_interfaces__rosidl_generator_c
+[1.856s] [ 28%] Generating C type support for eProsima Fast-RTPS
+[1.856s] [ 28%] Generating C introspection for ROS interfaces
+[1.856s] [ 28%] Generating C type support dispatch for ROS interfaces
+[1.955s] [ 30%] Building CXX object CMakeFiles/barometer_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/barometer_interfaces/msg/barometer__type_support.cpp.o
+[1.955s] [ 33%] Building CXX object CMakeFiles/barometer_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/barometer_interfaces/msg/z_motion__type_support.cpp.o
+[1.969s] [ 38%] Building CXX object CMakeFiles/barometer_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/barometer_interfaces/msg/detail/z_motion__type_support.cpp.o
+[1.969s] [ 38%] Building CXX object CMakeFiles/barometer_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/barometer_interfaces/msg/detail/barometer__type_support.cpp.o
+[1.979s] [ 41%] Building CXX object CMakeFiles/barometer_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/barometer_interfaces/msg/detail/dds_fastrtps/barometer__type_support.cpp.o
+[1.979s] [ 43%] Building CXX object CMakeFiles/barometer_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/barometer_interfaces/msg/detail/dds_fastrtps/z_motion__type_support.cpp.o
+[2.084s] [ 46%] Building CXX object CMakeFiles/barometer_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/barometer_interfaces/msg/barometer__type_support.cpp.o
+[2.087s] [ 48%] Building CXX object CMakeFiles/barometer_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/barometer_interfaces/msg/z_motion__type_support.cpp.o
+[2.102s] [ 51%] Building C object CMakeFiles/barometer_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/barometer_interfaces/msg/detail/barometer__type_support.c.o
+[2.103s] [ 53%] Building C object CMakeFiles/barometer_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/barometer_interfaces/msg/detail/z_motion__type_support.c.o
+[2.114s] [ 58%] Building CXX object CMakeFiles/barometer_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/barometer_interfaces/msg/detail/barometer__type_support_c.cpp.o
+[2.114s] [ 58%] Building CXX object CMakeFiles/barometer_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/barometer_interfaces/msg/detail/z_motion__type_support_c.cpp.o
+[2.122s] [ 61%] Linking CXX shared library libbarometer_interfaces__rosidl_typesupport_c.so
+[2.145s] [ 64%] Linking C shared library libbarometer_interfaces__rosidl_typesupport_introspection_c.so
+[2.170s] [ 64%] Built target barometer_interfaces__rosidl_typesupport_c
+[2.186s] [ 64%] Built target barometer_interfaces__rosidl_typesupport_introspection_c
+[2.239s] [ 66%] Linking CXX shared library libbarometer_interfaces__rosidl_typesupport_cpp.so
+[2.279s] [ 66%] Built target barometer_interfaces__rosidl_typesupport_cpp
+[2.327s] [ 69%] Linking CXX shared library libbarometer_interfaces__rosidl_typesupport_introspection_cpp.so
+[2.343s] [ 71%] Linking CXX shared library libbarometer_interfaces__rosidl_typesupport_fastrtps_cpp.so
+[2.381s] [ 74%] Linking CXX shared library libbarometer_interfaces__rosidl_typesupport_fastrtps_c.so
+[2.388s] [ 74%] Built target barometer_interfaces__rosidl_typesupport_introspection_cpp
+[2.415s] [ 74%] Built target barometer_interfaces__rosidl_typesupport_fastrtps_cpp
+[2.444s] [ 74%] Built target barometer_interfaces__rosidl_typesupport_fastrtps_c
+[2.463s] [ 74%] Built target barometer_interfaces
+[2.483s] [ 76%] Generating Python code for ROS interfaces
+[2.802s] [ 76%] Built target barometer_interfaces__py
+[2.826s] [ 82%] Building C object CMakeFiles/barometer_interfaces__rosidl_generator_py.dir/rosidl_generator_py/barometer_interfaces/msg/_z_motion_s.c.o
+[2.827s] [ 82%] Building C object CMakeFiles/barometer_interfaces__rosidl_generator_py.dir/rosidl_generator_py/barometer_interfaces/msg/_barometer_s.c.o
+[2.922s] [ 84%] Linking C shared library rosidl_generator_py/barometer_interfaces/libbarometer_interfaces__rosidl_generator_py.so
+[2.962s] [ 84%] Built target barometer_interfaces__rosidl_generator_py
+[2.979s] [ 89%] Building C object CMakeFiles/barometer_interfaces__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/barometer_interfaces/_barometer_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o
+[2.980s] [ 89%] Building C object CMakeFiles/barometer_interfaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/barometer_interfaces/_barometer_interfaces_s.ep.rosidl_typesupport_introspection_c.c.o
+[2.980s] [ 92%] Building C object CMakeFiles/barometer_interfaces__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/barometer_interfaces/_barometer_interfaces_s.ep.rosidl_typesupport_c.c.o
+[3.049s] [100%] Linking C shared library rosidl_generator_py/barometer_interfaces/barometer_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[3.049s] [100%] Linking C shared library rosidl_generator_py/barometer_interfaces/barometer_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[3.049s] [100%] Linking C shared library rosidl_generator_py/barometer_interfaces/barometer_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[3.082s] [100%] Built target barometer_interfaces__rosidl_typesupport_fastrtps_c__pyext
+[3.082s] [100%] Built target barometer_interfaces__rosidl_typesupport_introspection_c__pyext
+[3.082s] [100%] Built target barometer_interfaces__rosidl_typesupport_c__pyext
+[3.093s] Invoked command in '/home/leo/floor_estimate/ros_barometer-main/build/barometer_interfaces' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/leo/floor_estimate/ros_barometer-main/build/barometer_interfaces -- -j16 -l16
+[3.101s] Invoking command in '/home/leo/floor_estimate/ros_barometer-main/build/barometer_interfaces': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/leo/floor_estimate/ros_barometer-main/build/barometer_interfaces
+[3.108s] -- Install configuration: ""
+[3.109s] -- Execute custom install script
+[3.109s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/ament_index/resource_index/rosidl_interfaces/barometer_interfaces
+[3.117s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/include/barometer_interfaces/barometer_interfaces/msg/barometer.h
+[3.124s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/include/barometer_interfaces/barometer_interfaces/msg/detail/barometer__functions.h
+[3.131s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/include/barometer_interfaces/barometer_interfaces/msg/detail/barometer__struct.h
+[3.139s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/include/barometer_interfaces/barometer_interfaces/msg/detail/barometer__type_support.h
+[3.146s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/include/barometer_interfaces/barometer_interfaces/msg/detail/z_motion__functions.h
+[3.154s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/include/barometer_interfaces/barometer_interfaces/msg/detail/z_motion__struct.h
+[3.163s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/include/barometer_interfaces/barometer_interfaces/msg/detail/z_motion__type_support.h
+[3.171s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/include/barometer_interfaces/barometer_interfaces/msg/rosidl_generator_c__visibility_control.h
+[3.179s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/include/barometer_interfaces/barometer_interfaces/msg/z_motion.h
+[3.187s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/environment/library_path.sh
+[3.195s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/environment/library_path.dsv
+[3.203s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/include/barometer_interfaces/barometer_interfaces/msg/detail/barometer__rosidl_typesupport_fastrtps_c.h
+[3.212s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/include/barometer_interfaces/barometer_interfaces/msg/detail/z_motion__rosidl_typesupport_fastrtps_c.h
+[3.219s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/include/barometer_interfaces/barometer_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[3.229s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/include/barometer_interfaces/barometer_interfaces/msg/detail/barometer__rosidl_typesupport_introspection_c.h
+[3.236s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/include/barometer_interfaces/barometer_interfaces/msg/detail/z_motion__rosidl_typesupport_introspection_c.h
+[3.244s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/include/barometer_interfaces/barometer_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[3.251s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/include/barometer_interfaces/barometer_interfaces/msg/barometer.hpp
+[3.260s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/include/barometer_interfaces/barometer_interfaces/msg/detail/barometer__builder.hpp
+[3.268s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/include/barometer_interfaces/barometer_interfaces/msg/detail/barometer__struct.hpp
+[3.276s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/include/barometer_interfaces/barometer_interfaces/msg/detail/barometer__traits.hpp
+[3.284s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/include/barometer_interfaces/barometer_interfaces/msg/detail/barometer__type_support.hpp
+[3.292s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/include/barometer_interfaces/barometer_interfaces/msg/detail/z_motion__builder.hpp
+[3.301s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/include/barometer_interfaces/barometer_interfaces/msg/detail/z_motion__struct.hpp
+[3.309s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/include/barometer_interfaces/barometer_interfaces/msg/detail/z_motion__traits.hpp
+[3.316s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/include/barometer_interfaces/barometer_interfaces/msg/detail/z_motion__type_support.hpp
+[3.323s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/include/barometer_interfaces/barometer_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp
+[3.331s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/include/barometer_interfaces/barometer_interfaces/msg/z_motion.hpp
+[3.339s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/include/barometer_interfaces/barometer_interfaces/msg/detail/barometer__rosidl_typesupport_fastrtps_cpp.hpp
+[3.347s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/include/barometer_interfaces/barometer_interfaces/msg/detail/z_motion__rosidl_typesupport_fastrtps_cpp.hpp
+[3.355s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/include/barometer_interfaces/barometer_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[3.362s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/include/barometer_interfaces/barometer_interfaces/msg/detail/barometer__rosidl_typesupport_introspection_cpp.hpp
+[3.370s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/include/barometer_interfaces/barometer_interfaces/msg/detail/z_motion__rosidl_typesupport_introspection_cpp.hpp
+[3.377s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/environment/pythonpath.sh
+[3.385s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/environment/pythonpath.dsv
+[3.393s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/local/lib/python3.10/dist-packages/barometer_interfaces-0.0.0-py3.10.egg-info/PKG-INFO
+[3.400s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/local/lib/python3.10/dist-packages/barometer_interfaces-0.0.0-py3.10.egg-info/SOURCES.txt
+[3.409s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/local/lib/python3.10/dist-packages/barometer_interfaces-0.0.0-py3.10.egg-info/dependency_links.txt
+[3.417s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/local/lib/python3.10/dist-packages/barometer_interfaces-0.0.0-py3.10.egg-info/top_level.txt
+[3.425s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/local/lib/python3.10/dist-packages/barometer_interfaces/__init__.py
+[3.434s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/local/lib/python3.10/dist-packages/barometer_interfaces/_barometer_interfaces_s.ep.rosidl_typesupport_c.c
+[3.442s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/local/lib/python3.10/dist-packages/barometer_interfaces/_barometer_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+[3.450s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/local/lib/python3.10/dist-packages/barometer_interfaces/_barometer_interfaces_s.ep.rosidl_typesupport_introspection_c.c
+[3.457s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/local/lib/python3.10/dist-packages/barometer_interfaces/barometer_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[3.465s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/local/lib/python3.10/dist-packages/barometer_interfaces/barometer_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[3.472s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/local/lib/python3.10/dist-packages/barometer_interfaces/barometer_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[3.480s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/local/lib/python3.10/dist-packages/barometer_interfaces/libbarometer_interfaces__rosidl_generator_py.so
+[3.488s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/local/lib/python3.10/dist-packages/barometer_interfaces/msg/__init__.py
+[3.496s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/local/lib/python3.10/dist-packages/barometer_interfaces/msg/_barometer.py
+[3.503s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/local/lib/python3.10/dist-packages/barometer_interfaces/msg/_barometer_s.c
+[3.511s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/local/lib/python3.10/dist-packages/barometer_interfaces/msg/_z_motion.py
+[3.519s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/local/lib/python3.10/dist-packages/barometer_interfaces/msg/_z_motion_s.c
+[3.527s] -- Up-to-date symlink: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/local/lib/python3.10/dist-packages/barometer_interfaces/barometer_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[3.528s] -- Up-to-date symlink: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/local/lib/python3.10/dist-packages/barometer_interfaces/barometer_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[3.528s] -- Up-to-date symlink: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/local/lib/python3.10/dist-packages/barometer_interfaces/barometer_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[3.528s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/msg/Barometer.idl
+[3.536s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/msg/ZMotion.idl
+[3.544s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/msg/Barometer.msg
+[3.551s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/msg/ZMotion.msg
+[3.559s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/ament_index/resource_index/package_run_dependencies/barometer_interfaces
+[3.567s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/ament_index/resource_index/parent_prefix_path/barometer_interfaces
+[3.575s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/environment/ament_prefix_path.sh
+[3.583s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/environment/ament_prefix_path.dsv
+[3.592s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/environment/path.sh
+[3.599s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/environment/path.dsv
+[3.607s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/local_setup.bash
+[3.617s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/local_setup.sh
+[3.625s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/local_setup.zsh
+[3.633s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/local_setup.dsv
+[3.643s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/package.dsv
+[3.651s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/ament_index/resource_index/packages/barometer_interfaces
+[3.659s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/cmake/rosidl_cmake-extras.cmake
+[3.667s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake
+[3.676s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake
+[3.684s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/cmake/ament_cmake_export_libraries-extras.cmake
+[3.692s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/cmake/ament_cmake_export_targets-extras.cmake
+[3.700s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[3.709s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[3.717s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/cmake/barometer_interfacesConfig.cmake
+[3.725s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/cmake/barometer_interfacesConfig-version.cmake
+[3.733s] -- Symlinking: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/package.xml
+[3.742s] -- Installing: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/lib/libbarometer_interfaces__rosidl_generator_c.so
+[3.742s] -- Set runtime path of "/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/lib/libbarometer_interfaces__rosidl_generator_c.so" to ""
+[3.742s] -- Installing: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/lib/libbarometer_interfaces__rosidl_typesupport_fastrtps_c.so
+[3.743s] -- Set runtime path of "/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/lib/libbarometer_interfaces__rosidl_typesupport_fastrtps_c.so" to ""
+[3.743s] -- Installing: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/lib/libbarometer_interfaces__rosidl_typesupport_introspection_c.so
+[3.743s] -- Set runtime path of "/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/lib/libbarometer_interfaces__rosidl_typesupport_introspection_c.so" to ""
+[3.743s] -- Installing: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/lib/libbarometer_interfaces__rosidl_typesupport_c.so
+[3.743s] -- Set runtime path of "/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/lib/libbarometer_interfaces__rosidl_typesupport_c.so" to ""
+[3.743s] -- Installing: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/lib/libbarometer_interfaces__rosidl_typesupport_fastrtps_cpp.so
+[3.744s] -- Set runtime path of "/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/lib/libbarometer_interfaces__rosidl_typesupport_fastrtps_cpp.so" to ""
+[3.744s] -- Installing: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/lib/libbarometer_interfaces__rosidl_typesupport_introspection_cpp.so
+[3.744s] -- Set runtime path of "/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/lib/libbarometer_interfaces__rosidl_typesupport_introspection_cpp.so" to ""
+[3.744s] -- Installing: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/lib/libbarometer_interfaces__rosidl_typesupport_cpp.so
+[3.744s] -- Set runtime path of "/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/lib/libbarometer_interfaces__rosidl_typesupport_cpp.so" to ""
+[3.771s] Listing '/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/local/lib/python3.10/dist-packages/barometer_interfaces'...
+[3.772s] Compiling '/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/local/lib/python3.10/dist-packages/barometer_interfaces/__init__.py'...
+[3.772s] Listing '/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/local/lib/python3.10/dist-packages/barometer_interfaces/msg'...
+[3.772s] Compiling '/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/local/lib/python3.10/dist-packages/barometer_interfaces/msg/__init__.py'...
+[3.772s] Compiling '/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/local/lib/python3.10/dist-packages/barometer_interfaces/msg/_barometer.py'...
+[3.772s] Compiling '/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/local/lib/python3.10/dist-packages/barometer_interfaces/msg/_z_motion.py'...
+[3.775s] -- Installing: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/lib/libbarometer_interfaces__rosidl_generator_py.so
+[3.775s] -- Set runtime path of "/home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/lib/libbarometer_interfaces__rosidl_generator_py.so" to ""
+[3.775s] -- Installing: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/cmake/export_barometer_interfaces__rosidl_generator_cExport.cmake
+[3.776s] -- Installing: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/cmake/export_barometer_interfaces__rosidl_generator_cExport-noconfig.cmake
+[3.776s] -- Installing: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/cmake/export_barometer_interfaces__rosidl_typesupport_fastrtps_cExport.cmake
+[3.776s] -- Installing: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/cmake/export_barometer_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[3.777s] -- Installing: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/cmake/barometer_interfaces__rosidl_typesupport_introspection_cExport.cmake
+[3.777s] -- Installing: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/cmake/barometer_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[3.777s] -- Installing: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/cmake/barometer_interfaces__rosidl_typesupport_cExport.cmake
+[3.777s] -- Installing: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/cmake/barometer_interfaces__rosidl_typesupport_cExport-noconfig.cmake
+[3.777s] -- Installing: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/cmake/export_barometer_interfaces__rosidl_generator_cppExport.cmake
+[3.778s] -- Installing: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/cmake/export_barometer_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake
+[3.778s] -- Installing: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/cmake/export_barometer_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[3.778s] -- Installing: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/cmake/barometer_interfaces__rosidl_typesupport_introspection_cppExport.cmake
+[3.778s] -- Installing: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/cmake/barometer_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[3.778s] -- Installing: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/cmake/barometer_interfaces__rosidl_typesupport_cppExport.cmake
+[3.778s] -- Installing: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/cmake/barometer_interfaces__rosidl_typesupport_cppExport-noconfig.cmake
+[3.779s] -- Installing: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/cmake/export_barometer_interfaces__rosidl_generator_pyExport.cmake
+[3.779s] -- Installing: /home/leo/floor_estimate/ros_barometer-main/install/barometer_interfaces/share/barometer_interfaces/cmake/export_barometer_interfaces__rosidl_generator_pyExport-noconfig.cmake
+[3.781s] Invoked command in '/home/leo/floor_estimate/ros_barometer-main/build/barometer_interfaces' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/leo/floor_estimate/ros_barometer-main/build/barometer_interfaces
