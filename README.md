@@ -1,5 +1,6 @@
 # Floor_estimate
 The method of floor estimate.
+该项目复现这篇论文，并且这些内容也是由论文里面的仓库拉出来的，我在这里面的改动是加了一个calc_offsets_eq89.py的计算偏移量的代码，还加了一个baro_p_alti_launch.py这个估计楼层高度的代码
 # ESP32-S3 + BMP390 配置流程（已实测）
 ## 1. 适用范围
 
