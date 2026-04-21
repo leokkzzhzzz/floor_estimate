@@ -1,9 +1,6 @@
 # Floor_estimate
 The method of floor estimate.
-# ESP32-S3 + BMP390 完整配置流程（已实测）
-
-更新时间：2026-04-09
-
+# ESP32-S3 + BMP390 配置流程（已实测）
 ## 1. 适用范围
 
 本流程适用于你当前本地工程：
