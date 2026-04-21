@@ -93,7 +93,7 @@ ROS2（Humble）环境（若还没 source）：
 source /opt/ros/humble/setup.bash
 ```
 
-## 4. 固件工程关键点（已改好）
+## 4. 固件工程关键点
 
 当前工程已包含以下 S3 环境：
 
@@ -110,7 +110,7 @@ source /opt/ros/humble/setup.bash
 
 - `extra_scripts = pre:prebuild.py`
 
-## 5. 单板模式：编译与烧录（推荐先跑通）
+## 5. 单板模式：编译与烧录
 
 进入固件工程：
 
@@ -151,7 +151,7 @@ BAROD>...,1006.04,28.04
 BAROT>24:EC:4A:01:43:20
 ```
 
-## 7. 时间同步（可选，但建议）
+## 7. 时间同步
 
 向板子发一次时间同步命令：
 
@@ -205,8 +205,7 @@ source /opt/ros/humble/setup.bash
 source /home/leo/floor_estimate/ros_barometer-main/install/setup.bash
 ros2 topic echo /barometer --once
 ```
-
-你当前实测样例：
+实测样例：
 
 ```text
 header:
