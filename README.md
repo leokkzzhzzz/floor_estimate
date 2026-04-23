@@ -302,8 +302,7 @@ ros2 launch serial_to_ros2 baro_p_alti_launch.py esp32_serial_baro_params_file:=
 ```bash
 source /opt/ros/humble/setup.bash
 source /home/leo/floor_estimate/ros_barometer-main/install/setup.bash
-python3 /home/leo/floor_estimate/ESP32_Barometer-main/tools/
-calc_offsets_eq89.py \
+python3 /home/leo/floor_estimate/ESP32_Barometer-main/tools/calc_offsets_eq89.py \
 --mobile-mac E8_3D_C1_F1_A0_A8 \
 --base-mac 24_EC_4A_01_43_20 \
 --duration ... \
