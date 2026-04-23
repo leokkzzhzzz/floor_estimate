@@ -4,13 +4,13 @@ The method of floor estimate.
 # ESP32-S3 + BMP390 配置流程
 ## 1. 配置
 
-- `/home/leo/floor_estimate/ESP32_Barometer-main`
-- `/home/leo/floor_estimate/ros_barometer-main`
+- `./floor_estimate/ESP32_Barometer-main`
+- `./floor_estimate/ros_barometer-main`
 
 确认这些部分已经改好配置：
 ```
 line47
-/home/leo/floor_estimate/ESP32_Barometer-main/platformio.ini
+./floor_estimate/ESP32_Barometer-main/platformio.ini
 [env:barometer_node_s3]
 platform = espressif32
 board = esp32-s3-devkitc-1
@@ -33,7 +33,7 @@ extra_scripts = pre:prebuild.py
 
 ```
 line66
-/home/leo/floor_estimate/ESP32_Barometer-main/platformio.ini
+./floor_estimate/ESP32_Barometer-main/platformio.ini
 [env:barometer_base_s3]
 platform = espressif32
 board = esp32-s3-devkitc-1
@@ -113,7 +113,7 @@ source /opt/ros/humble/setup.bash
 进入固件工程：
 
 ```bash
-cd /home/leo/floor_estimate/ESP32_Barometer-main
+cd ./floor_estimate/ESP32_Barometer-main
 ```
 
 编译：
@@ -179,7 +179,7 @@ PY
 
 ```bash
 source /opt/ros/humble/setup.bash
-cd /home/leo/floor_estimate/ros_barometer-main
+cd ./floor_estimate/ros_barometer-main
 colcon build --symlink-install
 source install/setup.bash
 ```
@@ -188,7 +188,7 @@ source install/setup.bash
 
 ```bash
 source /opt/ros/humble/setup.bash
-source /home/leo/floor_estimate/ros_barometer-main/install/setup.bash
+source ./floor_estimate/ros_barometer-main/install/setup.bash
 ros2 run serial_to_ros2 esp32_serial_baro --ros-args -p serial_port:=/dev/ttyACM0 -p output_mode:=self-relative -p default_local_pressure:=1005 #参考压换成当地压强
 ```
 
@@ -200,7 +200,7 @@ ros2 run serial_to_ros2 esp32_serial_baro --ros-args -p serial_port:=/dev/ttyACM
 
 ```bash
 source /opt/ros/humble/setup.bash
-source /home/leo/floor_estimate/ros_barometer-main/install/setup.bash
+source ./floor_estimate/ros_barometer-main/install/setup.bash
 ros2 topic echo /barometer --once
 ```
 实测样例：
@@ -231,14 +231,14 @@ temperature: 29.49
 ## 9.1 基站板固件
 
 ```bash
-cd /home/leo/floor_estimate/ESP32_Barometer-main
+cd ./floor_estimate/ESP32_Barometer-main
 python3 -m platformio run -e barometer_base_s3 -t upload --upload-port /dev/ttyACM0
 ```
 说明：`barometer_base_s3` 需要在 `src/config.cpp` 填好 Wi-Fi 账号密码。
 
 文件：
 
-- `/home/leo/floor_estimate/ESP32_Barometer-main/src/config.cpp`
+- `./floor_estimate/ESP32_Barometer-main/src/config.cpp`
 - `const char *SSID_IOT = "xxx"`
 - `const char *SSID_IOT_PASSWORD = "xxxxxxxx"`
 
@@ -287,36 +287,35 @@ echo "24:EC:4A:01:43:20" | tr ':' '_'
 
 将得到的这组填入:
 ```bash
-ros_barometer-main/serial_to_ros2/config/esp32_serial_baro.yaml
+./floor_estimate/ros_barometer-main/serial_to_ros2/config/esp32_serial_baro.yaml
 ```
 
 启动数据流
 ```bash
-cd ros_barometer-main
+cd ./floor_estimate/ros_barometer-main
 source /opt/ros/humble/setup.bash
 source install/setup.bash
-ros2 launch serial_to_ros2 baro_p_alti_launch.py esp32_serial_baro_params_file:=/home/leo/floor_estimate/ros_barometer-main/serial_to_ros2/config/esp32_serial_baro.yaml
+ros2 launch serial_to_ros2 baro_p_alti_launch.py esp32_serial_baro_params_file:=./floor_estimate/ros_barometer-main/serial_to_ros2/config/esp32_serial_baro.yaml
 ```
 
 进行偏移数据标定得到偏移量
 ```bash
 source /opt/ros/humble/setup.bash
-source /home/leo/floor_estimate/ros_barometer-main/install/setup.bash
-python3 /home/leo/floor_estimate/ESP32_Barometer-main/tools/calc_offsets_eq89.py \
+source ./floor_estimate/ros_barometer-main/install/setup.bash
+python3 ./floor_estimate/ESP32_Barometer-main/tools/calc_offsets_eq89.py \
 --mobile-mac E8_3D_C1_F1_A0_A8 \
 --base-mac 24_EC_4A_01_43_20 \
 --duration ... \ #自己选持续时长
 --delta 30 \
 --jump-pressure 1.0 \ #threshold
 --jump-temp 1.0 \ #threshold
---yaml-path /home/leo/floor_estimate/ros_barometer-main/serial_to_ros2/config/esp32_serial_baro.yaml
+--yaml-path ./floor_estimate/ros_barometer-main/serial_to_ros2/config/esp32_serial_baro.yaml
 ```
 
 楼层测量
 ```bash
 source /opt/ros/humble/setup.bash
 source install/setup.bash
-ros2 launch serial_to_ros2 baro_p_alti_launch.py esp32_serial_baro_params_file:=/home/leo/floor_estimate/ros_barometer-main/serial_to_ros2/config/esp32_serial_baro.yaml
-python3 /home/leo/floor_estimate/ESP32_Barometer-main/tools/realtime_floor_validation.py  --duration 120  --live-interval 1 --floor-height 3  --floor-count 5
+ros2 launch serial_to_ros2 baro_p_alti_launch.py esp32_serial_baro_params_file:=./floor_estimate/ros_barometer-main/serial_to_ros2/config/esp32_serial_baro.yaml
+python3 ./floor_estimate/ESP32_Barometer-main/tools/realtime_floor_validation.py  --duration 120  --live-interval 1 --floor-height 3  --floor-count 5
 ```
-
