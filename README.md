@@ -277,6 +277,7 @@ python3 -m platformio device monitor -p /dev/ttyACM0 -b 115200
 ```
 期望看到：
 - `BAROT>24:EC:4A:01:43:20`
+  
 转换:
 ```bash
 echo "24:EC:4A:01:43:20" | tr ':' '_'
@@ -289,6 +290,7 @@ echo "24:EC:4A:01:43:20" | tr ':' '_'
 ros_barometer-main/serial_to_ros2/config/esp32_serial_baro.yaml
 ```
 
+启动数据流
 ```bash
 cd ros_barometer-main
 source /opt/ros/humble/setup.bash
@@ -296,10 +298,27 @@ source install/setup.bash
 ros2 launch serial_to_ros2 baro_p_alti_launch.py esp32_serial_baro_params_file:=/home/leo/floor_estimate/ros_barometer-main/serial_to_ros2/config/esp32_serial_baro.yaml
 ```
 
+进行偏移数据标定得到偏移量
+```bash
+source /opt/ros/humble/setup.bash
+source /home/leo/floor_estimate/ros_barometer-main/install/setup.bash
+python3 /home/leo/floor_estimate/ESP32_Barometer-main/tools/
+calc_offsets_eq89.py \
+--mobile-mac E8_3D_C1_F1_A0_A8 \
+--base-mac 24_EC_4A_01_43_20 \
+--duration ... \
+--delta 30 \
+--jump-pressure 1.0 \ #threshold
+--jump-temp 1.0 \ #threshold
+--yaml-path /home/leo/floor_estimate/ros_barometer-main/serial_to_ros2/
+config/esp32_serial_baro.yaml
+```
+
+楼层测量
 ```bash
 source /opt/ros/humble/setup.bash
 source install/setup.bash
 ros2 launch serial_to_ros2 baro_p_alti_launch.py esp32_serial_baro_params_file:=/home/leo/floor_estimate/ros_barometer-main/serial_to_ros2/config/esp32_serial_baro.yaml
-python3 /home/leo/floor_estimate/ESP32_Barometer-main/tools/realtime_floor_validation.py     --duration 120     --live-interval 1     --floor-height 3     --floor-count 5
+python3 /home/leo/floor_estimate/ESP32_Barometer-main/tools/realtime_floor_validation.py  --duration 120  --live-interval 1 --floor-height 3  --floor-count 5
 ```
 
