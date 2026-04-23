@@ -56,7 +56,7 @@ extra_scripts = pre:prebuild.py
 
 并且硬件为：
 
-- ESP32-S3（USB 串口设备：`/dev/ttyACM0`）
+- ESP32-S3（USB 串口设备：`/dev/ttyACM0`）#根据自己串口的显示选
 
 <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/QxqQs7HG/a7eb00f84350e193f899509318e7ce18.png' border='0' alt='a7eb00f84350e193f899509318e7ce18'></a>
 
@@ -243,7 +243,7 @@ python3 -m platformio run -e barometer_base_s3 -t upload --upload-port /dev/ttyA
 - `const char *SSID_IOT_PASSWORD = "xxxxxxxx"`
 
 烧录固件后启动串口监测
--  `python3 -m platformirun -e barometer_base_s3 -t upload --upload-port /dev/ttyACM1` 
+-  `python3 -m platformi run -e barometer_base_s3 -t upload --upload-port /dev/ttyACM1` 
 - ` python3 -m platformio device monitor -p /dev/ttyACM1 -b 115200` #要得到base_ip地址
 
 <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/W3FP4QBZ/jie-tu-2026-04-09-09-38-04.png' border='0' alt='jie-tu-2026-04-09-09-38-04'></a>
@@ -305,12 +305,11 @@ source /home/leo/floor_estimate/ros_barometer-main/install/setup.bash
 python3 /home/leo/floor_estimate/ESP32_Barometer-main/tools/calc_offsets_eq89.py \
 --mobile-mac E8_3D_C1_F1_A0_A8 \
 --base-mac 24_EC_4A_01_43_20 \
---duration ... \
+--duration ... \ #自己选持续时长
 --delta 30 \
 --jump-pressure 1.0 \ #threshold
 --jump-temp 1.0 \ #threshold
---yaml-path /home/leo/floor_estimate/ros_barometer-main/serial_to_ros2/
-config/esp32_serial_baro.yaml
+--yaml-path /home/leo/floor_estimate/ros_barometer-main/serial_to_ros2/config/esp32_serial_baro.yaml
 ```
 
 楼层测量
