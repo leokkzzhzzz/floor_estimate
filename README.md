@@ -273,6 +273,23 @@ ros2 run serial_to_ros2 esp32_serial_baro --ros-args -p serial_port:=/dev/ttyACM
 <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/SK6Fw6bf/jie-tu-2026-04-09-11-00-30.png' border='0' alt='jie-tu-2026-04-09-11-00-30'></a>
 
 ## 9.3 偏移量处理:
+获取ESP32的Mac:
+```bash
+python3 -m platformio device monitor -p /dev/ttyACM0 -b 115200
+```
+期望看到：
+- `BAROT>24:EC:4A:01:43:20`
+转换:
+```bash
+echo "24:EC:4A:01:43:20" | tr ':' '_'
+```
+得到:
+- `24_EC_4A_01_43_20`
+
+将得到的这组填入:
+```bash
+ros_barometer-main/serial_to_ros2/config/esp32_serial_baro.yaml
+```
 
 ```bash
 cd ros_barometer-main
