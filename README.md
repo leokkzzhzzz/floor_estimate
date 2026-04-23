@@ -263,11 +263,28 @@ python3 -m platformio run -e barometer_base_s3 -t upload --upload-port /dev/ttyA
 在 ROS 侧使用：
 
 - `output_mode:=base-relative`
-- `base_ip:=<基站IP>` 
-- `source /opt/ros/humble/setup.bash`
-- `source install/setup.bash`
-- `ros2 run serial_to_ros2 esp32_serial_baro --ros-args -p serial_port:=/dev/ttyACM1 -p output_mode:=base-relative -p base_ip:=192.168.100.42 -p default_local_pressure:=1006.90  `
-- `ros2 launch serial_to_ros2 baro_p_alti_launch.py esp32_serial_baro_params_file:=/home/leo/floor_estimate/ros_barometer-main/serial_to_ros2/config/esp32_serial_baro.yaml`
-- `python3 /home/leo/floor_estimate/ESP32_Barometer-main/tools/realtime_floor_validation.py     --duration 120     --live-interval 1     --floor-height 3     --floor-count 5`
+- `base_ip:=<基站IP>`
 
+```bash
+source /opt/ros/humble/setup.bash
+source install/setup.bash
+ros2 run serial_to_ros2 esp32_serial_baro --ros-args -p serial_port:=/dev/ttyACM1 -p output_mode:=base-relative -p base_ip:=192.168.100.42 -p default_local_pressure:=1006.90
+```
 <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/SK6Fw6bf/jie-tu-2026-04-09-11-00-30.png' border='0' alt='jie-tu-2026-04-09-11-00-30'></a>
+
+## 9.3 偏移量处理:
+
+```bash
+cd ros_barometer-main
+source /opt/ros/humble/setup.bash
+source install/setup.bash
+ros2 launch serial_to_ros2 baro_p_alti_launch.py esp32_serial_baro_params_file:=/home/leo/floor_estimate/ros_barometer-main/serial_to_ros2/config/esp32_serial_baro.yaml
+```
+
+```bash
+source /opt/ros/humble/setup.bash
+source install/setup.bash
+ros2 launch serial_to_ros2 baro_p_alti_launch.py esp32_serial_baro_params_file:=/home/leo/floor_estimate/ros_barometer-main/serial_to_ros2/config/esp32_serial_baro.yaml
+python3 /home/leo/floor_estimate/ESP32_Barometer-main/tools/realtime_floor_validation.py     --duration 120     --live-interval 1     --floor-height 3     --floor-count 5
+```
+
