@@ -277,7 +277,7 @@ ros2 run serial_to_ros2 esp32_serial_baro --ros-args -p serial_port:=/dev/ttyACM
 ## 9.3 偏移量处理:
 获取ESP32的Mac:
 ```bash
-python3 -m platformio device monitor -p /dev/ttyACM0 -b 115200
+python3 ~/.platformio/packages/tool-esptoolpy/esptool.py --chip esp32s3 --port /dev/ttyACM0 read_mac
 ```
 期望看到：
 - `BAROT>24:EC:4A:01:43:20`
