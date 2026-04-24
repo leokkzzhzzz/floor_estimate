@@ -113,6 +113,10 @@ source /opt/ros/humble/setup.bash
 进入固件工程：
 
 ```bash
+ls /dev/ttyACM* 2>/dev/null #串口检测
+```
+
+```bash
 cd ./floor_estimate/ESP32_Barometer-main
 ```
 
