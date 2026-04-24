@@ -314,6 +314,5 @@ python3 ~/floor_estimate/ESP32_Barometer-main/tools/calc_offsets_eq89.py --mobil
 ```bash
 source /opt/ros/humble/setup.bash
 source install/setup.bash
-ros2 launch serial_to_ros2 baro_p_alti_launch.py esp32_serial_baro_params_file:=./floor_estimate/ros_barometer-main/serial_to_ros2/config/esp32_serial_baro.yaml
 python3 ./floor_estimate/ESP32_Barometer-main/tools/realtime_floor_validation.py  --duration 120  --live-interval 1 --floor-height 3  --floor-count 5
 ```
