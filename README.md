@@ -247,8 +247,11 @@ python3 -m platformio run -e barometer_base_s3 -t upload --upload-port /dev/ttyA
 - `const char *SSID_IOT_PASSWORD = "xxxxxxxx"`
 
 烧录固件后启动串口监测
--  `python3 -m platformi run -e barometer_base_s3 -t upload --upload-port /dev/ttyACM1` 
-- ` python3 -m platformio device monitor -p /dev/ttyACM1 -b 115200` #要得到base_ip地址
+
+```bash
+python3 -m platformio run -e barometer_base_s3 -t upload --upload-port /dev/ttyACM1
+python3 -m platformio device monitor -p /dev/ttyACM1 -b 115200 #要得到base_ip地址
+```
 
 <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/W3FP4QBZ/jie-tu-2026-04-09-09-38-04.png' border='0' alt='jie-tu-2026-04-09-09-38-04'></a>
 
