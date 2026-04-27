@@ -257,9 +257,6 @@ python3 -m platformio device monitor -p /dev/ttyACM1 -b 115200 #要得到base_ip
 
 <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/N0TR6MqS/jie-tu-2026-04-09-10-30-13.png' border='0' alt='jie-tu-2026-04-09-10-30-13'></a>
 
-得到的base ip后续要填到移动端里面的config.cpp里，让移动端和基站建立联系：
-
-<a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/5t64FyqK/jie-tu-2026-04-20-16-00-44.png' border='0' alt='jie-tu-2026-04-20-16-00-44'></a>
 
 
 
