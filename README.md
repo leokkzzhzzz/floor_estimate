@@ -150,7 +150,7 @@ timeout 12s cat /dev/ttyACM0
 
 ```text
 BAROD>...,1006.04,28.04
-BAROT>24:EC:4A:01:43:20
+BAROT><ESP32_MAC>
 ```
 
 ## 7. 时间同步
@@ -264,8 +264,6 @@ python3 -m platformio device monitor -p /dev/ttyACM1 -b 115200 #要得到base_ip
 
 
 ## 9.2 ROS2配置
-[![jie-tu-2026-04-27-09-56-09.png](https://i.postimg.cc/J4m7WWKS/jie-tu-2026-04-27-09-56-09.png)](https://postimg.cc/QV4Zpw2q)
-
 在 ROS 侧使用：
 
 - `output_mode:=base-relative`
@@ -274,63 +272,70 @@ python3 -m platformio device monitor -p /dev/ttyACM1 -b 115200 #要得到base_ip
 ```bash
 source /opt/ros/humble/setup.bash
 source install/setup.bash
-ros2 run serial_to_ros2 esp32_serial_baro --ros-args -p serial_port:=/dev/ttyACM1 -p output_mode:=base-relative -p base_ip:=192.168.100.42 -p default_local_pressure:=1006.90
+ros2 run serial_to_ros2 esp32_serial_baro --ros-args -p serial_port:=/dev/ttyACM1 -p output_mode:=base-relative -p base_ip:=<基站ESP32局域网IP> -p default_local_pressure:=1006.90
 ```
 <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/SK6Fw6bf/jie-tu-2026-04-09-11-00-30.png' border='0' alt='jie-tu-2026-04-09-11-00-30'></a>
 
 ## 9.3 偏移量处理:
+
+[![jie-tu-2026-04-27-09-56-09.png](https://i.postimg.cc/J4m7WWKS/jie-tu-2026-04-27-09-56-09.png)](https://postimg.cc/QV4Zpw2q)
+
 获取ESP32的Mac:
 ```bash
 python3 ~/.platformio/packages/tool-esptoolpy/esptool.py --chip esp32s3 --port /dev/ttyACM0 read_mac
 ```
 期望看到：
+- `BAROT><ESP32_MAC>`
 - `BAROT>24:EC:4A:01:43:20`
   
 转换:
 ```bash
-echo "24:EC:4A:01:43:20" | tr ':' '_'
+echo "<ESP32_MAC>" | tr ':' '_'
 ```
 得到:
-- `24_EC_4A_01_43_20`
+- `<ESP32_MAC_UNDERSCORE>`
 
 将得到的这组填入:
 ```bash
-/home/leo/floor_estimate/ros_barometer-main/serial_to_ros2/config/esp32_serial_baro.yaml
+~/floor_estimate/ros_barometer-main/serial_to_ros2/config/esp32_serial_baro.yaml
 ```
 
 启动数据流
 ```bash
-cd /home/leo/floor_estimate/ros_barometer-main
+cd ~/floor_estimate/ros_barometer-main
 source /opt/ros/humble/setup.bash
 source install/setup.bash
-ros2 launch serial_to_ros2 baro_p_alti_launch.py esp32_serial_baro_params_file:=/home/leo/floor_estimate/ros_barometer-main/serial_to_ros2/config/esp32_serial_baro.yaml
+ros2 launch serial_to_ros2 baro_p_alti_launch.py esp32_serial_baro_params_file:=~/floor_estimate/ros_barometer-main/serial_to_ros2/config/esp32_serial_baro.yaml
 ```
 
 进行偏移数据标定得到偏移量
 ```bash
-cd /home/leo/floor_estimate
+cd ~/floor_estimate
 source /opt/ros/humble/setup.bash
-source /home/leo/floor_estimate/ros_barometer-main/install/setup.bash
+source ~/floor_estimate/ros_barometer-main/install/setup.bash
 python3 ESP32_Barometer-main/tools/calc_offsets_eq89.py \
---mobile-mac E8_3D_C1_F1_A0_A8 \
---base-mac 24_EC_4A_01_43_20 \
+--mobile-mac <MOBILE_MAC_UNDERSCORE> \
+--base-mac <BASE_MAC_UNDERSCORE> \
 --duration ... \ #自己选持续时长
 --delta 30 \
 --jump-pressure 1.0 \ #threshold
 --jump-temp 1.0 \ #threshold
---yaml-path /home/leo/floor_estimate/ros_barometer-main/serial_to_ros2/config/esp32_serial_baro.yaml
+--yaml-path ~/floor_estimate/ros_barometer-main/serial_to_ros2/config/esp32_serial_baro.yaml
 ```
 
 楼层测量
 ```bash
-cd /home/leo/floor_estimate/ros_barometer-main
+cd ~/floor_estimate/ros_barometer-main
 source /opt/ros/humble/setup.bash
 source install/setup.bash
-ros2 launch serial_to_ros2 baro_p_alti_launch.py esp32_serial_baro_params_file:=/home/leo/floor_estimate/ros_barometer-main/serial_to_ros2/config/esp32_serial_baro.yaml
-python3 /home/leo/floor_estimate/ESP32_Barometer-main/tools/realtime_floor_validation.py  --duration 120  --live-interval 1 --floor-height 3  --floor-count 5
+ros2 launch serial_to_ros2 baro_p_alti_launch.py esp32_serial_baro_params_file:=~/floor_estimate/ros_barometer-main/serial_to_ros2/config/esp32_serial_baro.yaml
+python3 ~/floor_estimate/ESP32_Barometer-main/tools/realtime_floor_validation.py  --duration 120  --live-interval 1 --floor-height 3  --floor-count 5
 ```
 
 ## 10. 机器人侧和电脑侧应用
+
+<a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/prGjZxDT/Chat-GPT-Image-2026nian4yue27ri-17-19-12.png' border='0' alt='Chat-GPT-Image-2026nian4yue27ri-17-19-12'></a>
+
 ```text
 Mobile ESP32 + BMP390
     -> USB serial on robot computer
@@ -349,12 +354,14 @@ Robot computer
     -> outputs dh_mean and floor index
 ```
 
+
+
 ## 10.1 机器人侧
 
 初始化环境
 ```bash
 cd ~/floor_estimate
-  source /opt/ros/foxy/setup.bash #根据自己版本选
+  source /opt/ros/humble/setup.bash #根据自己版本选
   source ~/floor_estimate/ros_barometer-main/install/setup.bash
 ```
 
@@ -366,7 +373,7 @@ ros2 launch serial_to_ros2 baro_p_alti_launch.py
 进行楼层预测
 ```bash
 cd ~/floor_estimate
-source /opt/ros/foxy/setup.bash
+source /opt/ros/humble/setup.bash
 source ~/floor_estimate/ros_barometer-main/install/setup.bash
 
 /usr/bin/python3 ./ESP32_Barometer-main/tools/realtime_floor_validation.py \
@@ -379,5 +386,6 @@ source ~/floor_estimate/ros_barometer-main/install/setup.bash
 ## 10.2 电脑侧
 启动relay
 ```bash
-python3 ~/floor_estimate/ESP32_Barometer-main/tools/relay_to_robot.py
+python3 ~/floor_estimate/ESP32_Barometer-main/tools/relay_to_robot.py \
+  --robot-url http://<机器人Tailscale_IP>:18080/data
 ```
