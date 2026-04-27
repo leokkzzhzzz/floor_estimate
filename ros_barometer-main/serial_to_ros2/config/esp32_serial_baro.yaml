@@ -1,51 +1,18 @@
 esp32_serial_baro:
   ros__parameters:
-    serial_port: ""  # Serial port for the ESP32 Barometer
-    output_mode: "base-relative"
-    frequency: 5.0  # Frequency in Hz, NOTE: Config key exists but handling logic is not implemented
-    base_ip: "10.20.128.181"
-    default_local_pressure: 1010.0  # Sea-level reference, in HPa
-    longitude: 121.60
+    serial_port: /dev/ttyACM1
+    output_mode: base-relative
+    frequency: 5.0
+    base_ip: 192.168.100.42
+    default_local_pressure: 1004.0
+    longitude: 121.6
     latitude: 31.68
-    # cali_offsets: # MAC address of the sensor as key
-    #   64_B7_08_D0_16_D8:
-    #     pressure_offset:    1.5280
-    #     temperature_offset: -0.2931
-    #     linear_factor: 1.0000
-    #   64_B7_08_D0_30_5C:
-    #     pressure_offset:    0.1782
-    #     temperature_offset: -0.5687
-    #     linear_factor: 1.0000
-    #   64_B7_08_60_D3_E0:
-    #     pressure_offset:    0.7707
-    #     temperature_offset:  0.3553
-    #     linear_factor: 1.0000
-    #   64_B7_08_60_D3_F0:
-    #     pressure_offset:    0.6427
-    #     temperature_offset:  0.3117
-    #     linear_factor: 1.0000
-    #   64_B7_08_60_B5_64:
-    #     pressure_offset:   -3.1196
-    #     temperature_offset:  0.1948
-    #     linear_factor: 1.0000
     cali_offsets:
-      64_B7_08_D0_16_D8:
-        pressure_offset: 1.584
-        temperature_offset: -0.3871
-        linear_factor: 1.0000
-      64_B7_08_D0_30_5C:
-        pressure_offset: 0.1603
-        temperature_offset: -0.4905
-        linear_factor: 1.0000
-      64_B7_08_60_D3_E0:
-        pressure_offset: 0.7901
-        temperature_offset: 0.8162
-        linear_factor: 1.0000
-      64_B7_08_60_D3_F0:
-        pressure_offset: 0.7180
-        temperature_offset: 0.1231
-        linear_factor: 1.0000
-      64_B7_08_60_B5_64:
-        pressure_offset: -3.253
-        temperature_offset: -0.0618
-        linear_factor: 1.0000
+      E8_3D_C1_F1_A0_A8:
+        pressure_offset: -0.0049
+        temperature_offset: -0.1449
+        linear_factor: 1.0
+      24_EC_4A_01_43_20:
+        pressure_offset: 0.0049
+        temperature_offset: 0.1449
+        linear_factor: 1.0

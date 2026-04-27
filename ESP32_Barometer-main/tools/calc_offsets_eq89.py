@@ -359,9 +359,41 @@ def main() -> int:
         ros_initialized = True
         node = DualBarometerCollector(args.mobile_topic, args.base_topic)
 
+        print(
+            "Starting offset calibration collection: "
+            f"duration={args.duration_s:.1f}s, delta={args.delta_s:.1f}s",
+            flush=True,
+        )
+        print(
+            f"Topics: mobile={args.mobile_topic}, base={args.base_topic}",
+            flush=True,
+        )
+        print(f"YAML target: {args.yaml_path}", flush=True)
+
         start = time.time()
+        progress_interval_s = 5.0
+        next_progress = start
         while time.time() - start < args.duration_s:
             rclpy.spin_once(node, timeout_sec=0.2)
+            now = time.time()
+            if now >= next_progress:
+                elapsed = now - start
+                remaining = max(0.0, args.duration_s - elapsed)
+                print(
+                    "[collect] "
+                    f"t+{elapsed:6.1f}s/{args.duration_s:.1f}s "
+                    f"rem={remaining:6.1f}s "
+                    f"mobile={len(node.mobile_raw)} "
+                    f"base={len(node.base_raw)}",
+                    flush=True,
+                )
+                next_progress = now + progress_interval_s
+
+        print(
+            "Collection finished: "
+            f"mobile_raw={len(node.mobile_raw)}, base_raw={len(node.base_raw)}",
+            flush=True,
+        )
 
         mobile_grid = resample_average(node.mobile_raw, args.delta_s)
         base_grid = resample_average(node.base_raw, args.delta_s)

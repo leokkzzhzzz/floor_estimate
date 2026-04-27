@@ -38,17 +38,22 @@ def find_serial_port() -> str:
     """
     Find the first available serial port that matches the ESP32 device with a barometer.
     """
+    sysname = os.uname().sysname.lower()
     serial_ports = None
-    if 'darwin' in os.uname().sysname.lower():  # macOS
+    if 'darwin' in sysname:  # macOS
         serial_ports = [p.device for p in serial.tools.list_ports.comports()
                         if "usbserial" in p.device]
-    else:  # Linux
+    elif 'linux' in sysname:
         serial_ports = [p.device for p in serial.tools.list_ports.comports()
-                        if "ttyUSB" in p.device]
+                        if ("ttyUSB" in p.device or "ttyACM" in p.device)]
+    else:
+        serial_ports = [p.device for p in serial.tools.list_ports.comports()]
 
+    accessible_ports = []
     for port in serial_ports:
         try:
             with serial.Serial(port, 115200, timeout=2) as ser:
+                accessible_ports.append(port)
                 for _ in range(5):
                     line = ser.readline().decode('utf-8', errors='ignore').strip()
                     print(f"Reading from {port}: {line}")
@@ -56,6 +61,11 @@ def find_serial_port() -> str:
                         return port
         except (serial.SerialException, OSError):
             continue
+
+    # Fallback: if no BARO-prefixed frames are observed, return the first
+    # accessible candidate port instead of failing fast.
+    if accessible_ports:
+        return accessible_ports[0]
 
     return None
 

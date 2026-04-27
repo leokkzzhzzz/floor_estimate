@@ -295,28 +295,37 @@ echo "24:EC:4A:01:43:20" | tr ':' '_'
 
 将得到的这组填入:
 ```bash
---mobile-mac E8_3D_C1_F1_A0_A8
---base-mac 24_EC_4A_01_43_20
+/home/leo/floor_estimate/ros_barometer-main/serial_to_ros2/config/esp32_serial_baro.yaml
 ```
 
 启动数据流
 ```bash
-cd ./floor_estimate/ros_barometer-main
+cd /home/leo/floor_estimate/ros_barometer-main
 source /opt/ros/humble/setup.bash
 source install/setup.bash
-ros2 launch serial_to_ros2 baro_p_alti_launch.py esp32_serial_baro_params_file:=./floor_estimate/ros_barometer-main/serial_to_ros2/config/esp32_serial_baro.yaml
+ros2 launch serial_to_ros2 baro_p_alti_launch.py esp32_serial_baro_params_file:=/home/leo/floor_estimate/ros_barometer-main/serial_to_ros2/config/esp32_serial_baro.yaml
 ```
 
 进行偏移数据标定得到偏移量
 ```bash
-cd ./floor_estimate
+cd /home/leo/floor_estimate
 source /opt/ros/humble/setup.bash
-python3 ~/floor_estimate/ESP32_Barometer-main/tools/calc_offsets_eq89.py --mobile-mac E8_3D_C1_F1_A0_A8 --base-mac 24_EC_4A_01_43_20 --duration 360 --delta 30 --jump-pressure 1.0 --jump-temp 1.0 --yaml-path ~/floor_estimate/ros_barometer-main/serial_to_ros2/config/esp32_serial_baro.yaml
+source /home/leo/floor_estimate/ros_barometer-main/install/setup.bash
+python3 ESP32_Barometer-main/tools/calc_offsets_eq89.py \
+--mobile-mac E8_3D_C1_F1_A0_A8 \
+--base-mac 24_EC_4A_01_43_20 \
+--duration ... \ #自己选持续时长
+--delta 30 \
+--jump-pressure 1.0 \ #threshold
+--jump-temp 1.0 \ #threshold
+--yaml-path /home/leo/floor_estimate/ros_barometer-main/serial_to_ros2/config/esp32_serial_baro.yaml
 ```
 
 楼层测量
 ```bash
+cd /home/leo/floor_estimate/ros_barometer-main
 source /opt/ros/humble/setup.bash
 source install/setup.bash
-python3 ./floor_estimate/ESP32_Barometer-main/tools/realtime_floor_validation.py  --duration 120  --live-interval 1 --floor-height 3  --floor-count 5
+ros2 launch serial_to_ros2 baro_p_alti_launch.py esp32_serial_baro_params_file:=/home/leo/floor_estimate/ros_barometer-main/serial_to_ros2/config/esp32_serial_baro.yaml
+python3 /home/leo/floor_estimate/ESP32_Barometer-main/tools/realtime_floor_validation.py  --duration 120  --live-interval 1 --floor-height 3  --floor-count 5
 ```

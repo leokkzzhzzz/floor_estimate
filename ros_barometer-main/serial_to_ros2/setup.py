@@ -1,5 +1,6 @@
 from setuptools import find_packages, setup
 from glob import glob
+from os.path import isfile
 
 package_name = 'serial_to_ros2'
 
@@ -12,7 +13,8 @@ setup(
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
         ('share/' + package_name + '/config', glob('config/*')),
-        ('share/' + package_name + '/launch', glob('launch/*')),
+        ('share/' + package_name + '/launch',
+            [path for path in glob('launch/*') if isfile(path)]),
     ],
     install_requires=['setuptools'],
     zip_safe=True,

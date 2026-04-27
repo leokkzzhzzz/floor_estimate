@@ -9,8 +9,10 @@ This script subscribes to:
 Then it reports:
 - paired timing quality
 - dp/dT/dh statistics
-- floor index distribution by nearest-neighbor:
-    l = argmin_k |dh - Hk|
+- floor index distribution by edge-threshold rule:
+    floor k iff dh >= k*H - margin (clipped to [0, floor_count-1])
+- nearest-floor error statistics (for comparability):
+    err = min_k |dh - Hk|
 
 Default floor map:
 - floor height = 3 m
@@ -20,6 +22,7 @@ Default floor map:
 from __future__ import annotations
 
 import argparse
+import math
 import statistics
 import sys
 import time
@@ -50,6 +53,7 @@ class Args:
     summary_only: bool
     floor_height_m: float
     floor_count: int
+    floor_switch_margin_m: float
     mobile_topic: str
     base_topic: str
 
@@ -84,6 +88,16 @@ def parse_args() -> Args:
     parser.add_argument("--summary-only", action="store_true", help="Disable live rolling print; only final summary.")
     parser.add_argument("--floor-height", type=float, default=3.0, dest="floor_height_m")
     parser.add_argument("--floor-count", type=int, default=5, dest="floor_count")
+    parser.add_argument(
+        "--floor-switch-margin",
+        type=float,
+        default=0.2,
+        dest="floor_switch_margin_m",
+        help=(
+            "Switch threshold margin in meters. "
+            "With floor_height=3 and margin=0.2, 0->1 switch is at dh>=2.8."
+        ),
+    )
     parser.add_argument("--mobile-topic", default="/barometer")
     parser.add_argument("--base-topic", default="/base/barometer")
     ns = parser.parse_args()
@@ -97,6 +111,10 @@ def parse_args() -> Args:
         parser.error("--floor-height must be > 0")
     if ns.floor_count < 2:
         parser.error("--floor-count must be >= 2")
+    if ns.floor_switch_margin_m < 0:
+        parser.error("--floor-switch-margin must be >= 0")
+    if ns.floor_switch_margin_m >= ns.floor_height_m:
+        parser.error("--floor-switch-margin must be < --floor-height")
     return Args(
         duration_s=ns.duration_s,
         max_pair_dt_s=ns.max_pair_dt_s,
@@ -104,15 +122,43 @@ def parse_args() -> Args:
         summary_only=ns.summary_only,
         floor_height_m=ns.floor_height_m,
         floor_count=ns.floor_count,
+        floor_switch_margin_m=ns.floor_switch_margin_m,
         mobile_topic=ns.mobile_topic,
         base_topic=ns.base_topic,
     )
 
 
 def nearest_floor(dh: float, hk: List[float]) -> Tuple[int, float]:
+    """Return nearest floor index and absolute height error for one dh sample."""
     idx = min(range(len(hk)), key=lambda i: abs(dh - hk[i]))
     err = abs(dh - hk[idx])
     return idx, err
+
+
+def threshold_floor_index(
+    dh: float,
+    floor_height_m: float,
+    floor_count: int,
+    floor_switch_margin_m: float,
+) -> int:
+    """
+    Return floor index using a floor-edge switching threshold.
+
+    Example with floor_height=3.0 and margin=0.2:
+    - dh < 2.8  => floor 0
+    - dh >= 2.8 => floor 1
+    """
+    idx = math.floor((dh + floor_switch_margin_m) / floor_height_m)
+    return max(0, min(floor_count - 1, idx))
+
+
+def _p95_from_sorted(values: List[float]) -> float:
+    """
+    Compute p95 using the script's original index rule.
+
+    Keeping this exact rule preserves existing behavior and historical outputs.
+    """
+    return values[int(0.95 * (len(values) - 1))]
 
 
 def build_paired_metrics(
@@ -120,13 +166,18 @@ def build_paired_metrics(
     base: List[Sample],
     max_pair_dt_s: float,
     hk: List[float],
+    floor_height_m: float,
+    floor_switch_margin_m: float,
 ) -> dict | None:
     """Pair mobile/base by nearest timestamp and compute validation metrics."""
 
     if not mobile or not base:
         return None
 
-    i = 0
+    # Two-pointer nearest-neighbor pairing:
+    # For each base sample, advance mobile index while the next mobile sample
+    # is closer in timestamp. This avoids O(N*M) matching.
+    mobile_idx = 0
     dt_list: List[float] = []
     dp_list: List[float] = []
     dT_list: List[float] = []
@@ -135,9 +186,13 @@ def build_paired_metrics(
     floor_err_list: List[float] = []
 
     for tb, pb, Tb, hb in base:
-        while i + 1 < len(mobile) and abs(mobile[i + 1][0] - tb) <= abs(mobile[i][0] - tb):
-            i += 1
-        tm, pm, Tm, hm = mobile[i]
+        while (
+            mobile_idx + 1 < len(mobile)
+            and abs(mobile[mobile_idx + 1][0] - tb) <= abs(mobile[mobile_idx][0] - tb)
+        ):
+            mobile_idx += 1
+
+        tm, pm, Tm, hm = mobile[mobile_idx]
         dt = abs(tm - tb)
         if dt > max_pair_dt_s:
             continue
@@ -145,7 +200,13 @@ def build_paired_metrics(
         dp = pm - pb
         dT = Tm - Tb
         dh = hm - hb
-        idx, err = nearest_floor(dh, hk)
+        idx = threshold_floor_index(
+            dh=dh,
+            floor_height_m=floor_height_m,
+            floor_count=len(hk),
+            floor_switch_margin_m=floor_switch_margin_m,
+        )
+        _, err = nearest_floor(dh, hk)
 
         dt_list.append(dt)
         dp_list.append(dp)
@@ -157,10 +218,11 @@ def build_paired_metrics(
     if not dh_list:
         return None
 
+    # Keep percentile behavior identical to previous implementation.
     dt_sorted = sorted(dt_list)
     floor_err_sorted = sorted(floor_err_list)
-    dt_p95 = dt_sorted[int(0.95 * (len(dt_sorted) - 1))]
-    err_p95 = floor_err_sorted[int(0.95 * (len(floor_err_sorted) - 1))]
+    dt_p95 = _p95_from_sorted(dt_sorted)
+    err_p95 = _p95_from_sorted(floor_err_sorted)
     floor_dist = dict(sorted(Counter(floor_idx_list).items()))
     dominant_floor = max(floor_dist, key=floor_dist.get)
 
@@ -183,6 +245,31 @@ def build_paired_metrics(
     }
 
 
+def snapshot_metrics(
+    node: Collector,
+    max_pair_dt_s: float,
+    hk: List[float],
+    floor_height_m: float,
+    floor_switch_margin_m: float,
+) -> dict | None:
+    """
+    Build one metrics snapshot from current collector buffers.
+
+    Streams are sorted by timestamp before pairing so nearest-neighbor matching
+    is deterministic regardless of callback arrival order.
+    """
+    mobile = sorted(node.mobile, key=lambda x: x[0])
+    base = sorted(node.base, key=lambda x: x[0])
+    return build_paired_metrics(
+        mobile,
+        base,
+        max_pair_dt_s,
+        hk,
+        floor_height_m=floor_height_m,
+        floor_switch_margin_m=floor_switch_margin_m,
+    )
+
+
 def main() -> int:
     args = parse_args()
     if _ROS_IMPORT_ERROR is not None:
@@ -195,6 +282,11 @@ def main() -> int:
 
     hk = [i * args.floor_height_m for i in range(args.floor_count)]
     print("floor_map(Hk):", hk)
+    print(
+        "floor_switch_rule: "
+        f"dh >= k*H - margin -> floor k; "
+        f"H={args.floor_height_m}, margin={args.floor_switch_margin_m}"
+    )
 
     rclpy.init()
     node = Collector(args.mobile_topic, args.base_topic)
@@ -210,9 +302,13 @@ def main() -> int:
             if now < next_live:
                 continue
 
-            mobile = sorted(node.mobile, key=lambda x: x[0])
-            base = sorted(node.base, key=lambda x: x[0])
-            metrics = build_paired_metrics(mobile, base, args.max_pair_dt_s, hk)
+            metrics = snapshot_metrics(
+                node,
+                args.max_pair_dt_s,
+                hk,
+                floor_height_m=args.floor_height_m,
+                floor_switch_margin_m=args.floor_switch_margin_m,
+            )
             elapsed = now - t0
             if metrics is None:
                 print(f"[t+{elapsed:6.1f}s] waiting data...")
@@ -228,9 +324,13 @@ def main() -> int:
                 )
             next_live += args.live_interval_s
 
-        mobile = sorted(node.mobile, key=lambda x: x[0])
-        base = sorted(node.base, key=lambda x: x[0])
-        metrics = build_paired_metrics(mobile, base, args.max_pair_dt_s, hk)
+        metrics = snapshot_metrics(
+            node,
+            args.max_pair_dt_s,
+            hk,
+            floor_height_m=args.floor_height_m,
+            floor_switch_margin_m=args.floor_switch_margin_m,
+        )
         if metrics is None:
             print("ERROR: no aligned pairs after nearest-neighbor pairing")
             return 3
