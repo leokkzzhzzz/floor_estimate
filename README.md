@@ -261,6 +261,7 @@ python3 -m platformio run -e barometer_base_s3 -t upload --upload-port /dev/ttyA
 
 
 ## 9.2 ROS 参数
+[![jie-tu-2026-04-27-09-56-09.png](https://i.postimg.cc/J4m7WWKS/jie-tu-2026-04-27-09-56-09.png)](https://postimg.cc/QV4Zpw2q)
 
 在 ROS 侧使用：
 
