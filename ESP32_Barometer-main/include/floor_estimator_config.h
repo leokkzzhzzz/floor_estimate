@@ -9,7 +9,9 @@
 #endif
 
 #ifndef BASE_HOST_IP
-#define BASE_HOST_IP "192.168.100.42"
+// Configure this before using direct base-host registration.
+// Do not commit a personal LAN or Tailscale IP here.
+#define BASE_HOST_IP ""
 #endif
 
 #ifndef BASE_HOST_PORT

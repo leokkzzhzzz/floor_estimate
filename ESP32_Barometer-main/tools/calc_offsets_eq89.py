@@ -24,6 +24,7 @@ import statistics
 import time
 from collections import defaultdict
 from dataclasses import dataclass
+from pathlib import Path
 from typing import DefaultDict, Dict, List, Tuple
 
 import yaml
@@ -39,8 +40,11 @@ except Exception as exc:  # pragma: no cover (depends on ROS env)
     Node = object  # type: ignore[assignment,misc]
     _ROS_IMPORT_ERROR = exc
 
+REPO_ROOT = Path(__file__).resolve().parents[2]
+DEFAULT_YAML_PATH = REPO_ROOT / "ros_barometer-main" / "serial_to_ros2" / "config" / "esp32_serial_baro.yaml"
 ROS_SETUP_HINT = (
-    "source /home/leo/floor_estimate/ros_barometer-main/install/setup.bash"
+    "source /opt/ros/humble/setup.bash && "
+    "source <repo>/ros_barometer-main/install/setup.bash"
 )
 
 
@@ -111,12 +115,12 @@ def parse_args() -> CliArgs:
     parser.add_argument(
         "--mobile-mac",
         default=os.getenv("MOBILE_MAC", ""),
-        help="Mobile MAC in underscore-upper form, e.g. E8_3D_C1_F1_A0_A8",
+        help="Mobile MAC in underscore-upper form, e.g. AA_BB_CC_DD_EE_FF",
     )
     parser.add_argument(
         "--base-mac",
         default=os.getenv("BASE_MAC", ""),
-        help="Base MAC in underscore-upper form, e.g. 24_EC_4A_01_43_20",
+        help="Base MAC in underscore-upper form, e.g. 11_22_33_44_55_66",
     )
     parser.add_argument(
         "--duration",
@@ -164,7 +168,7 @@ def parse_args() -> CliArgs:
     )
     parser.add_argument(
         "--yaml-path",
-        default="/home/leo/floor_estimate/ros_barometer-main/serial_to_ros2/config/esp32_serial_baro.yaml",
+        default=str(DEFAULT_YAML_PATH),
         help="Target ROS YAML file to write cali_offsets",
     )
     ns = parser.parse_args()

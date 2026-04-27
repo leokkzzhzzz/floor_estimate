@@ -1,7 +1,9 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-// Wi-Fi Credentials
+// Wi-Fi credentials are defined in src/config.cpp.
+// Fill in local values before flashing, but do not commit real SSIDs,
+// passwords, identities, or network-specific IPs.
 extern const char *SSID_IOT;
 extern const char *SSID_IOT_PASSWORD;
 

@@ -44,6 +44,5 @@ platformio.ini.private
 secrets.h
 credentials.h
 
-# 包含敏感信息的文件
-config.cpp
+# PlatformIO prebuild output
 src/main.cpp

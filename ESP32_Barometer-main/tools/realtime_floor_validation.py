@@ -275,7 +275,8 @@ def main() -> int:
     if _ROS_IMPORT_ERROR is not None:
         print("ERROR: ROS2 Python env not ready.", file=sys.stderr)
         print(
-            "Please run: source /home/leo/floor_estimate/ros_barometer-main/install/setup.bash",
+            "Please run: source /opt/ros/humble/setup.bash && "
+            "source <repo>/ros_barometer-main/install/setup.bash",
             file=sys.stderr,
         )
         return 1

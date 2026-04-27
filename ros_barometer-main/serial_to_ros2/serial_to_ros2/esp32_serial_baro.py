@@ -148,6 +148,15 @@ class PressureNode(Node):
             self.pub_base_barometer = self.create_publisher(
                 Barometer, '/base/barometer', 10)
 
+            self.declare_parameter(
+                'base_pressure_port',
+                default_params.get('base_pressure_port', 18080),
+                ParameterDescriptor(
+                    description='HTTP port for receiving base pressure POST /data')
+            )
+            self.base_pressure_port = self.get_parameter(
+                'base_pressure_port').get_parameter_value().integer_value
+
         self.declare_parameter(
             'default_local_pressure',
             default_params.get('default_local_pressure', 1010.0),
@@ -622,7 +631,7 @@ class PressureNode(Node):
                 status=500
             )
 
-    async def _setup_base_pressure_server(self, port: int = 8080):
+    async def _setup_base_pressure_server(self, port: int):
         """Setup the base pressure HTTP server"""
         try:
             # Create web application
@@ -672,7 +681,7 @@ class PressureNode(Node):
         """Start the base pressure server"""
         try:
             # Setup server
-            success = await self._setup_base_pressure_server()
+            success = await self._setup_base_pressure_server(self.base_pressure_port)
             if not success:
                 self._error("Failed to start base pressure server")
                 return
@@ -687,6 +696,9 @@ class PressureNode(Node):
 
     async def _register_ip_for_base_server(self) -> None:
         """Register the IP address of the base server"""
+        if not self.base_ip:
+            self._info("base_ip is empty; skipping direct /clientip registration")
+            return
         timeout = aiohttp.ClientTimeout(total=10)
         try:
             async with aiohttp.ClientSession(timeout=timeout) as session:
