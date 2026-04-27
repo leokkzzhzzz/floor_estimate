@@ -263,7 +263,7 @@ python3 -m platformio device monitor -p /dev/ttyACM1 -b 115200 #要得到base_ip
 
 
 
-## 9.2 ROS 参数
+## 9.2 ROS2配置
 [![jie-tu-2026-04-27-09-56-09.png](https://i.postimg.cc/J4m7WWKS/jie-tu-2026-04-27-09-56-09.png)](https://postimg.cc/QV4Zpw2q)
 
 在 ROS 侧使用：
@@ -328,4 +328,56 @@ source /opt/ros/humble/setup.bash
 source install/setup.bash
 ros2 launch serial_to_ros2 baro_p_alti_launch.py esp32_serial_baro_params_file:=/home/leo/floor_estimate/ros_barometer-main/serial_to_ros2/config/esp32_serial_baro.yaml
 python3 /home/leo/floor_estimate/ESP32_Barometer-main/tools/realtime_floor_validation.py  --duration 120  --live-interval 1 --floor-height 3  --floor-count 5
+```
+
+## 10. 机器人侧和电脑侧应用
+```text
+Mobile ESP32 + BMP390
+    -> USB serial on robot computer
+    -> esp32_serial_baro
+    -> /barometer
+
+Base ESP32 + BMP390
+    -> WiFi POST to base laptop relay
+    -> Tailscale POST to robot computer
+    -> esp32_serial_baro HTTP receiver
+    -> /base/barometer
+
+Robot computer
+    -> subscribes /barometer and /base/barometer
+    -> realtime_floor_validation.py
+    -> outputs dh_mean and floor index
+```
+
+## 10.1 机器人侧
+
+初始化环境
+```bash
+cd ~/floor_estimate
+  source /opt/ros/foxy/setup.bash #根据自己版本选
+  source ~/floor_estimate/ros_barometer-main/install/setup.bash
+```
+
+启动ROS2 barometer node
+```bash
+ros2 launch serial_to_ros2 baro_p_alti_launch.py
+```
+
+进行楼层预测
+```bash
+cd ~/floor_estimate
+source /opt/ros/foxy/setup.bash
+source ~/floor_estimate/ros_barometer-main/install/setup.bash
+
+/usr/bin/python3 ./ESP32_Barometer-main/tools/realtime_floor_validation.py \
+--duration 120 \
+--live-interval 1 \
+--floor-height 3 \
+--floor-count 5
+```
+
+## 10.2 电脑侧
+启动relay
+```bash
+python3 ~/floor_estimate/ESP32_Barometer-main/tools/relay_to_robot.py
 ```
