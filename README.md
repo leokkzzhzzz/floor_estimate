@@ -99,13 +99,11 @@ source /opt/ros/humble/setup.bash
 - `barometer_base_s3`（基站 Wi-Fi 推送）
 
 并且已启用：
-
 - `BARO_I2C_SDA_PIN=41`
 - `BARO_I2C_SCL_PIN=42`
 - `ARDUINO_USB_CDC_ON_BOOT=1`
 
 以及预构建脚本：
-
 - `extra_scripts = pre:prebuild.py`
 
 ## 5. 单板模式：编译与烧录
@@ -132,22 +130,19 @@ python3 -m platformio run -e barometer_node_s3
 python3 -m platformio run -e barometer_node_s3 -t upload --upload-port /dev/ttyACM0
 ```
 
-## 6. 单板模式：串口验证
+## 6.串口验证
 
-读取串口（12 秒）：
+读取串口：
 
 ```bash
-stty -F /dev/ttyACM0 115200 cs8 -cstopb -parenb -ixon -ixoff raw -echo
-timeout 12s cat /dev/ttyACM0
+python3 -m platformio device monitor -p /dev/ttyACM1 -b 115200
 ```
 
 期望看到：
-
 - `BAROD>timestamp,pressure_hpa,temp_c`
 - `BAROT>mac`
 
 你当前实测样例：
-
 ```text
 BAROD>...,1006.04,28.04
 BAROT><ESP32_MAC>
@@ -156,7 +151,7 @@ BAROT><ESP32_MAC>
 ## 7. 时间同步
 
 向板子发一次时间同步命令：
-
+可做可不做
 ```bash
 python3 - <<'PY'
 import serial, time
@@ -198,17 +193,17 @@ ros2 run serial_to_ros2 esp32_serial_baro --ros-args -p serial_port:=/dev/ttyACM
 
 <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/NMzHL8mW/jie-tu-2026-04-08-15-43-29.png' border='0' alt='jie-tu-2026-04-08-15-43-29'></a>
 
+
 ### 8.3 查看话题数据
 
 新终端执行：
-
 ```bash
 source /opt/ros/humble/setup.bash
 source ./floor_estimate/ros_barometer-main/install/setup.bash
 ros2 topic echo /barometer --once
 ```
-实测样例：
 
+实测样例：
 ```text
 header:
   stamp:
@@ -219,6 +214,7 @@ altitude: 79.3833
 pressure: 100564.0
 temperature: 29.49
 ```
+
 ### 不同楼层测试气压
 
 <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/WprsK6tM/jie-tu-2026-04-08-15-52-13.png' border='0' alt='jie-tu-2026-04-08-15-52-13'></a>
