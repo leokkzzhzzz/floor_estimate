@@ -307,13 +307,13 @@ cd ~/floor_estimate
 source /opt/ros/humble/setup.bash
 source ~/floor_estimate/ros_barometer-main/install/setup.bash
 python3 ESP32_Barometer-main/tools/calc_offsets_eq89.py \
---mobile-mac <MOBILE_MAC_UNDERSCORE> \
---base-mac <BASE_MAC_UNDERSCORE> \
---duration ... \ #自己选持续时长
---delta 30 \
---jump-pressure 1.0 \ #threshold
---jump-temp 1.0 \ #threshold
---yaml-path ~/floor_estimate/ros_barometer-main/serial_to_ros2/config/esp32_serial_baro.yaml
+    --mobile-mac <MOBILE_MAC_UNDERSCORE> \
+    --base-mac <BASE_MAC_UNDERSCORE> \
+    --duration ... \ #自己选持续时长
+    --delta 30 \
+    --jump-pressure 1.0 \ #threshold
+    --jump-temp 1.0 \ #threshold
+    --yaml-path ~/floor_estimate/ros_barometer-main/serial_to_ros2/config/esp32_serial_baro.yaml
 ```
 
 楼层测量
