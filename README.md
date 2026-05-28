@@ -121,7 +121,7 @@ cd ./floor_estimate/ESP32_Barometer-main
 编译：
 
 ```bash
-python3 -m platformio run -e barometer_node_s3
+python3 -m platformio run -e barometer_node_s3  #移动端固件
 ```
 
 烧录：
@@ -135,7 +135,7 @@ python3 -m platformio run -e barometer_node_s3 -t upload --upload-port /dev/ttyA
 读取串口：
 
 ```bash
-python3 -m platformio device monitor -p /dev/ttyACM1 -b 115200
+python3 -m platformio device monitor -p /dev/ttyACM0 -b 115200
 ```
 
 期望看到：
